@@ -20164,3 +20164,35 @@ img.grayscale:hover {
   border: none;
   border-radius: 0;
 }
+.api-image{
+  background-color: #ffffff;
+  width: 100%;
+  overflow:hidden;
+  /* Internet Explorer 10 */
+  display:-ms-flexbox;
+  -ms-flex-pack:center;
+  -ms-flex-align:center;
+
+  /* Firefox */
+  display:-moz-box;
+  -moz-box-pack:center;
+  -moz-box-align:center;
+
+  /* Safari, Opera, and Chrome */
+  display:-webkit-box;
+  -webkit-box-pack:center;
+  -webkit-box-align:center;
+
+  /* W3C */
+  display:box;
+  box-pack:center;
+  box-align:center;
+}
+
+.api-icon{
+  margin-top: 90px;
+  margin-bottom: 90px;
+  text-align: center;
+  color: #304ffe;
+  font-size: 90px!important;
+}
