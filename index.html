@@ -1,473 +1,1718 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>API Docs Matching App</title>
-    <link rel="stylesheet" href="css/prism.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
+<!doctype html>
+<html lang="en-US">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+		<title>Index Wine | Vicky Restaurant</title>
+		<link rel="shortcut icon" type="image/ico" href="images/favicon-wine.ico" />
 
-<div class="row">
-    <div class="header"></div>
-    <div class="nav navbar-default">
-        <div class="navbar-brand col-lg-4 col-md-4 col-sm-4">API Docs -
-            Matching
-        </div>
-        <div class="col-lg-7 col-md-7 col-sm-7 host">
-            Localhost: <a href="http://192.168.2.14/api">http://192.168.2.14:8000/api</a><br>
-            Host-dev: <a href="http://118.70.177.23/product_matching/public/api">http://118.70.177.23/product_matching/public/api</a>
-        </div>
-    </div>
-    <div class="container col-lg-12 col-md-12 col-sm-12">
-        <div class="navigation col-lg-2 col-md-3 col-sm-4">
-            <div class="list">
-                <ol>
-                    <li>Login
-                        <ol>
-                            <li><a href="#fb">Facebook</a></li>
-                            <li><a href="#gg">Google</a></li>
-                        </ol>
-                    </li>
-                    <li>Type
-                        <ol>
-                            <li><a href="#type">Loại phòng khám</a></li>
-                        </ol>
-                    </li>
-                    <li>Maps
-                        <ol>
-                            <li><a href="#near">Tìm lân cận</a></li>
-                        </ol>
-                    </li>
-                    <li>Search
-                        <ol>
-                            <li><a href="#search">Bộ lọc</a></li>
-                        </ol>
-                    </li>
-                    <li>Detail
-                        <ol>
-                            <li><a href="#detail">Chi tiết phòng khám</a></li>
-                        </ol>
-                    </li>
-                    <li>Rating
-                        <ol>
-                            <li>Đánh giá</li>
-                        </ol>
-                    </li>
-                    <li>Comment
-                        <ol>
-                            <li>Comment mới</li>
-                            <li>Sửa comment</li>
-                            <li>Xóa comment</li>
-                        </ol>
-                    </li>
-                </ol>
-            </div>
-        </div>
-        <div class="content col-lg-10 col-md-9 col-sm-8">
-            <!-- Open Parent section-->
-            <div class="section col-lg-12 col-md-12 col-sm-12">
-                <p class="title_parent">Login</p>
-                <!-- Open section-->
-                <div class="section_child col-lg-12 col-md-12 col-sm-12">
-                    <p class="title_child" id="fb"><span style="color: #f4645f;">#</span> Facebook</p>
-                    <div class="block block col-lg-12 col-md-12 col-sm-12"><span class="method">Method: </span><span>POST</span>
-                    </div>
-                    <br>
-                    <div class="block block col-lg-12 col-md-12 col-sm-12"><span class="url">URL: </span><span><a>/login/loginFacebook</a></span>
-                    </div>
-                    <br>
-                    <div class="block block col-lg-12 col-md-12 col-sm-12"><span class="params">Parameters: </span>
-                        <ul class="">
-                            <li><span class="param">facebook_id : </span><span>id của tài khoản facebook</span></li>
-                            <li><span
-                                    class="param">facebook_access_token : </span><span>token của tài khoản facebook</span>
-                            </li>
-                            <li><span class="param">name : </span><span>Tên của tài khoản facebook</span></li>
-                            <li><span class="param">email : </span><span>Email của tài khoản facebook</span></li>
-                        </ul>
-                    </div>
-                    <br>
-                    <div class="block col-lg-12 col-md-12 col-sm-12">
-                        <span class="response">Response: </span><br>
-                        <pre class="col-lg-8 col-md-8 col-sm-8"><code class="language-json">
-{
-    "status": 1,
-    "messages": "Logged in",
-    "data": {
-        "userId": 10,
-        "user_email": "312321",
-        "user_avatar": null,
-        "last_login": "2016-10-10 14:44:42",
-        "patient": [
-            {
-                "id": 10,
-                "patient_name": "312",
-                "patient_type": 1,
-                "relationship": null,
-                "user_id": 10,
-                "dob": null,
-                "height": null,
-                "weight": null,
-                "blood_type": null,
-                "gender": 1,
-                "address": null,
-                "job": null,
-                "ward_id": null,
-                "district_id": null,
-                "province_id": null
-            }
-        ]
-    }
-}
-                    </code></pre>
-                    </div>
-                    <br>
-                </div>
+		<link rel='stylesheet' href='css/bootstrap.min.css' type='text/css' media='all'/>
+		<link rel='stylesheet' href='css/settings.css' type='text/css' media='all'/>
+		<link rel='stylesheet' href='css/jquery.selectBox.css' type='text/css' media='all'/>
+		<link rel='stylesheet' href='css/elegant-icon.css' type='text/css' media='all'/>
+		<link rel='stylesheet' href='css/font-awesome.min.css' type='text/css' media='all'/>
+		<link rel='stylesheet' href='css/style.css' type='text/css' media='all'/>
+		<link rel='stylesheet' href='css/commerce.css' type='text/css' media='all'/>
+		<link rel='stylesheet' href='css/form.css' type='text/css' media='all'/>
+		<link rel='stylesheet' href='css/custom.css' type='text/css' media='all'/>
+		<link rel='stylesheet' href='css/magnific-popup.css' type='text/css' media='all'/>
+		<link rel='stylesheet' href='css/jquery.datetimepicker.css' type='text/css' media='all'/>
+		<link rel='stylesheet' href='css/preloader.css' type='text/css' media='all'/>
+		<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=PT+Sans%3A400%2C700%7CDancing+Script%3A400%2C700%7CRoboto+Slab%3A400%2C700&#038;' type='text/css' media='all'/>
 
-                <!-- Close section-->
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
 
-                <!-- Open section-->
+	</head>
+	<body data-spy="scroll">
+		<div id="preloader">
+			<img class="preloader__logo" src="images/logo-wine.png" alt="" width="100" height="100"/>
+			<div class="preloader__progress">
+				<svg width="60px" height="60px" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+					<path class="preloader__progress-circlebg" fill="none" stroke="#dddddd" stroke-width="4" stroke-linecap="round" d="M40,10C57.351,10,71,23.649,71,40.5S57.351,71,40.5,71 S10,57.351,10,40.5S23.649,10,40.5,10z"/>
+					<path id='preloader__progress-circle' fill="none" stroke="#8c001a" stroke-width="4" stroke-linecap="round" stroke-dashoffset="192.61" stroke-dasharray="192.61 192.61" d="M40,10C57.351,10,71,23.649,71,40.5S57.351,71,40.5,71 S10,57.351,10,40.5S23.649,10,40.5,10z"/>
+				</svg>
+			</div>
+		</div>
+		<div id="wrapper" class="wide-wrap">
+			<header class="header-container header-type-default header-default-center header-absolute header-transparent">
+				<div class="navbar-container">
+					<div class="navbar navbar-default navbar-scroll-fixed">
+						<div class="navbar-default-wrap">
+							<div class="container">
+								<div class="navbar-wrap">
+									<div class="navbar-header">
+										<button data-target=".primary-navbar-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+											<span class="sr-only">Toggle navigation</span>
+											<span class="icon-bar bar-top"></span>
+											<span class="icon-bar bar-middle"></span>
+											<span class="icon-bar bar-bottom"></span>
+										</button>
+										<a class="cart-icon-mobile" href="#">
+											<i class="minicart-icon-svg elegant_icon_cart_alt"></i>
+										</a>
+										<a class="navbar-brand" href="./">
+											<img class="logo" alt="Vicky Restaurant" src="images/logo-wine.png">
+											<img class="logo-fixed" alt="Vicky Restaurant" src="images/logo-wine.png">
+											<img class="logo-mobile" alt="Vicky Restaurant" src="images/logo-mobile-wine.png">
+										</a>
+									</div>
+									<nav class="collapse navbar-collapse primary-navbar-collapse">
+										<ul class="nav navbar-nav primary-nav">
+											<li class="menu-item-has-children dropdown active">
+												<a href="./" class="dropdown-hover">
+													<span class="underline">Home</span> 
+													<span class="caret"></span>
+												</a>
+												<ul class="dropdown-menu">
+													<li><a href="index-parallax.html">Home Parallax</a></li>
+												</ul>
+											</li>
+											<li>
+												<a href="our-menu.html">
+													<span class="underline">Our Menu</span>
+												</a>
+											</li>
+											<li class="menu-item-has-children dropdown">
+												<a href="#" class="dropdown-hover">
+													<span class="underline">Blog</span> 
+													<span class="caret"></span>
+												</a>
+												<ul class="dropdown-menu">
+													<li><a href="blog-default.html">Blog Default</a></li>
+													<li><a href="blog-medium.html">Blog Medium</a></li>
+													<li><a href="blog-center.html">Blog Center</a></li>
+													<li><a href="blog-zigzag.html">Blog Zigzag</a></li>
+													<li><a href="blog-masonry.html">Blog Masonry</a></li>
+													<li><a href="blog-timeline.html">Blog Timeline</a></li>
+													<li><a href="blog-grid.html">Blog Grid</a></li>
+													<li><a href="blog-image-detail.html">Blog Image Detail</a></li>
+													<li><a href="blog-video-detail.html">Blog Video Detail</a></li>
+												</ul>
+											</li>
+											<li class="menu-item-navbar-brand">
+												<a class="navbar-brand" href="./">
+													<img class="logo" alt="Vicky Restaurant" src="images/logo-wine.png">
+													<img class="logo-fixed" alt="Vicky Restaurant" src="images/logo-wine.png">
+													<img class="logo-mobile" alt="Vicky Restaurant" src="images/logo-mobile-wine.png">
+												</a>
+											</li>
+											<li class="menu-item-has-children dropdown">
+												<a href="#" class="dropdown-hover">
+													<span class="underline">Features</span> 
+													<span class="caret"></span>
+												</a>
+												<ul class="dropdown-menu">
+													<li><a href="reservation.html">Reservation</a></li>
+													<li><a href="gallery.html">Gallery</a></li>
+													<li><a href="gallery-detail.html">Gallery Detail</a></li>
+													<li><a href="about-us.html">About Us</a></li>
+													<li><a href="contact-us.html">Contact Us</a></li>
+												</ul>
+											</li>
+											<li class="menu-item-has-children dropdown">
+												<a href="shop.html" class="dropdown-hover">
+													<span class="underline">Shop</span> 
+													<span class="caret"></span>
+												</a>
+												<ul role="menu" class="dropdown-menu">
+													<li><a href="shop-masonry.html">Shop Masonry</a></li>
+													<li><a href="my-account.html">My Account</a></li>
+													<li><a href="cart.html">Cart</a></li>
+													<li><a href="empty-cart.html">Empty Cart</a></li>
+													<li><a href="shop-detail.html">Shop Detail</a></li>
+												</ul>
+											</li>
+											<li class="menu-item-has-children megamenu megamenu-fullwidth dropdown">
+												<a href="#" class="dropdown-hover">
+													<span class="underline">Shortcodes</span> 
+													<span class="caret"></span>
+												</a>
+												<ul class="dropdown-menu">
+													<li class="menu-item-has-children mega-col-3 dropdown-submenu">
+														<h3 class="megamenu-title">
+															1. Shortcodes <span class="caret"></span>
+														</h3>
+														<ul class="dropdown-menu">
+															<li><a href="accordion.html">Accordions</a></li>
+															<li><a href="blockquote.html">Blockquote</a></li>
+															<li><a href="button.html">Buttons</a></li>
+															<li><a href="call-to-action.html">Call to Action</a></li>
+															<li><a href="carousel-content.html">Carousel Contents</a></li>
+															<li><a href="client.html">Client</a></li>
+														</ul>
+													</li>
+													<li class="menu-item-has-children mega-col-3 dropdown-submenu">
+														<h3 class="megamenu-title">
+															2. Shortcodes <span class="caret"></span>
+														</h3>
+														<ul class="dropdown-menu">
+															<li><a href="google-map.html">Google Maps</a></li>
+															<li><a href="counter.html">Counter</a></li>
+															<li><a href="icon-box.html">IconBox</a></li>
+															<li><a href="latest-news.html">Latest News</a></li>
+															<li><a href="message-box.html">Message Boxes</a></li>
+														</ul>
+													</li>
+													<li class="menu-item-has-children mega-col-3 dropdown-submenu">
+														<h3 class="megamenu-title">
+															3.Shortcodes <span class="caret"></span>
+														</h3>
+														<ul class="dropdown-menu">
+															<li><a href="modal.html">Modal</a></li>
+															<li><a href="pie-chart.html">Pie Chart</a></li>
+															<li><a href="pricing-table.html">Pricing Table</a></li>
+															<li><a href="progress-bar.html">Progress Bars</a></li>
+															<li><a href="responsive-video.html">Responsive Video</a></li>
+														</ul>
+													</li>
+													<li class="menu-item-has-children mega-col-3 dropdown-submenu">
+														<h3 class="megamenu-title">
+															4. Shortcodes <span class="caret"></span>
+														</h3>
+														<ul class="dropdown-menu">
+															<li><a href="tabs.html">Tabs</a></li>
+															<li><a href="team-member.html">Team Member</a></li>
+															<li><a href="testimonial.html">Testimonial Slider</a></li>
+															<li><a href="timeline.html">Timelines</a></li>
+															<li><a href="tooltip.html">ToolTip / Popover</a></li>
+														</ul>
+													</li>
+												</ul>
+											</li>
+											<li class="navbar-search">
+												<a class="navbar-search-button" href="#">
+													<i class="fa fa-search"></i>
+												</a>
+												<div class="search-form-wrap show-popup hide">
+													<form>
+														<input type="search" class="searchinput" name="s" autocomplete="off" value="" placeholder="Search..."/>
+														<input type="submit" class="searchsubmit hidden" name="submit" value="Search"/>
+													</form>
+												</div>
+											</li>
+										</ul>
+									</nav>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+			<div class="content-container no-padding">
+				<div class="container-full">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="main-content">
+								<div class="row">
+									<div class="col-md-12">
+										<div class="revslider">
+											<div id="rev_slider_wrapper">
+ 												<div id="rev_slider">
+													<ul>  
+														<li data-transition="flyin" data-slotamount="5" data-masterspeed="300" data-thumb="" data-saveperformance="off" data-title="Slide">
+ 															<img src="images/sliders/slider-1920x821.jpg" alt="slider-4" data-bgposition="left top" data-bgfit="cover" data-bgrepeat="no-repeat">
+															<div class="tp-caption sft" data-x="center" data-hoffset="0" data-y="220" data-speed="1300" data-start="1000" data-easing="Sine.easeIn" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300">
+																<img src="images/sliders/w-layer-1.png" alt="">
+															</div>
+															<div class="tp-caption customin" data-x="center" data-hoffset="0" data-y="304" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-speed="1300" data-start="1200" data-easing="easeInOutElastic" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300">
+																<img src="images/sliders/w-layer-2.png" alt="">
+															</div>
+															<div class="tp-caption lfb" data-x="center" data-hoffset="0" data-y="394" data-speed="1300" data-start="1200" data-easing="Quad.easeInOut" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300">
+																<img src="images/sliders/w-layer-3.png" alt="">
+															</div>
+														</li>
+														<li data-transition="flyin" data-slotamount="5" data-masterspeed="300" data-thumb="" data-saveperformance="off" data-title="Slide">
+															<img src="images/sliders/slider-1920x821.jpg" alt="slide-5" data-bgposition="left top" data-bgfit="cover" data-bgrepeat="no-repeat">
+															<div class="tp-caption sft" data-x="center" data-hoffset="0" data-y="220" data-speed="1300" data-start="1000" data-easing="Sine.easeIn" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300">
+																<img src="images/sliders/w-layer-1.png" alt="">
+															</div>
+															<div class="tp-caption customin" data-x="center" data-hoffset="0" data-y="304" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-speed="1300" data-start="1200" data-easing="easeInOutElastic" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300">
+																<img src="images/sliders/w-layer-2.png" alt="">
+															</div>
+															<div class="tp-caption lfb" data-x="center" data-hoffset="0" data-y="394" data-speed="1300" data-start="1200" data-easing="Quad.easeInOut" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300">
+																<img src="images/sliders/w-layer-3.png" alt="">
+															</div>
+														</li>
+													</ul>
+													<div class="tp-bannertimer tp-bottom"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="container">
+									<div class="row row-custom-margin mtn-10 bg-white home-wine-about">
+										<div class="col-md-8 col-sm-6">
+											<div class="box box-custom-margin-padding p-7">
+												<h3 class="text-center heading-custom-font m-0">
+													Welcome to
+												</h3>
+												<h2 class="text-center m-0">
+													VICKY WINE
+												</h2>
+												<div class="single-image image-center">
+													<img width="198" height="7" src="images/vicky-vine-line.png" alt="vicky-vine-line"/>
+												</div>
+												<div class="text-block pt-2">
+													Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#8217;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+												</div>
+											</div>
+										</div>
+										<div class="col-md-4 col-sm-4">
+											<div class="box box-custom-margin-padding mtn-20">
+												<div class="single-image image-center">
+													<img width="433" height="642" src="images/vicky-vine-1.png" alt="vicky-vine-1"/>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="row home-wine-about pt-8 pb-8">
+									<div class="col-md-12">
+										<div class="container">
+											<h3 class="text-center heading-custom-font m-0">
+												Classic Wine
+											</h3>
+											<h2 class="text-center m-0">
+												DISCOVER OUR PRODUCT
+											</h2>
+											<div class="single-image image-center pb-4">
+												<img width="198" height="7" src="images/vicky-vine-line.png" alt="vicky-vine-line"/>
+											</div>
+											<div class="box">
+												<div class="caroufredsel product-slider" data-scroll-fx="scroll" data-speed="700" data-easing="linear" data-visible-min="1" data-scroll-item="" data-responsive="1" data-infinite="1" data-autoplay="0">
+													<div class="caroufredsel-wrap">
+														<div class="commerce columns-4">
+															<ul class="products columns-4" data-columns="4">
+																<li class="product">
+																	<div class="product-container">
+																		<figure>
+																			<div class="product-wrap">
+																				<div class="product-images">
+																					<a href="#">
+																						<div class="shop-loop-thumbnail">
+																							<img width="800" height="800" src="images/wine/product-thumb-274x274.jpg" alt="product-12"/>
+																						</div>
+																					</a>
+																				</div>
+																			</div>
+																			<figcaption>
+																				<div class="shop-loop-product-info">
+																					<div class="info-title">
+																						<h3 class="product_title">
+																							<a href="#">Nunc interdum</a>
+																						</h3>
+																					</div>
+																					<div class="info-rating">
+																						<div class="star-rating">
+																							<span style="width:0%"></span>
+																						</div>
+																					</div>
+																					<div class="info-meta">
+																						<div class="info-price">
+																							<span class="price">
+																								<span class="amount">
+																									&#36;14.95
+																								</span>
+																							</span>
+																						</div>
+																					</div>
+																					<div class="shop-loop-actions">
+																						<a class="shop-loop-quickview" href="#"></a>
+																						<a href="#" class="button">
+																							Add to cart
+																						</a>
+																						<div class="yith-wcwl-add-to-wishlist">
+																							<a href="#" class="add_to_wishlist"></a>
+																						</div>
+																					</div>
+																				</div>
+																			</figcaption>
+																		</figure>
+																	</div>
+																</li>
+																<li class="product">
+																	<div class="product-container">
+																		<figure>
+																			<div class="product-wrap">
+																				<div class="product-images">
+																					<a href="#">
+																						<span class="onsale">Sale!</span>
+																						<div class="shop-loop-thumbnail">
+																							<img width="800" height="800" src="images/wine/product-thumb-274x274.jpg" alt="product-11"/>
+																						</div>
+																					</a>
+																				</div>
+																			</div>
+																			<figcaption>
+																				<div class="shop-loop-product-info">
+																					<div class="info-title">
+																						<h3 class="product_title">
+																							<a href="#">Donec tincidunt justo</a>
+																						</h3>
+																					</div>
+																					<div class="info-rating">
+																						<div class="star-rating">
+																							<span style="width:0%"></span>
+																						</div>
+																					</div>
+																					<div class="info-meta">
+																						<div class="info-price">
+																							<span class="price">
+																								<del>
+																									<span class="amount">&#36;20.50</span>
+																								</del> 
+																								<ins>
+																									<span class="amount">&#36;19.00</span>
+																								</ins>
+																							</span>
+																						</div>
+																					</div>
+																					<div class="shop-loop-actions">
+																						<a class="shop-loop-quickview" href="#"></a>
+																						<a href="#" class="button">
+																							Add to cart
+																						</a>
+																						<div class="yith-wcwl-add-to-wishlist">
+																							<a href="#" class="add_to_wishlist"></a>
+																						</div>
+																					</div>
+																				</div>
+																			</figcaption>
+																		</figure>
+																	</div>
+																</li>
+																<li class="product">
+																	<div class="product-container">
+																		<figure>
+																			<div class="product-wrap">
+																				<div class="product-images">
+																					<a href="#">
+																						<div class="shop-loop-thumbnail shop-loop-front-thumbnail">
+																							<img width="800" height="800" src="images/wine/product-thumb-274x274.jpg" alt="product-10">
+																						</div>
+																						<div class="shop-loop-thumbnail shop-loop-back-thumbnail">
+																							<img width="800" height="800" src="images/wine/product-thumb-274x274.jpg" alt="product-8">
+																						</div>
+																					</a>
+																				</div>
+																			</div>
+																			<figcaption>
+																				<div class="shop-loop-product-info">
+																					<div class="info-title">
+																						<h3 class="product_title">
+																							<a href="#">Quisque libero</a>
+																						</h3>
+																					</div>
+																					<div class="info-rating">
+																						<div class="star-rating">
+																							<span style="width:100%"></span>
+																						</div>
+																					</div>
+																					<div class="info-meta">
+																						<div class="info-price">
+																							<span class="price">
+																								<span class="amount">
+																									&#36;17.50
+																								</span>
+																							</span>
+																						</div>
+																					</div>
+																					<div class="shop-loop-actions">
+																						<a class="shop-loop-quickview" href="#"></a>
+																						<a href="#" class="button">
+																							Add to cart
+																						</a>
+																						<div class="yith-wcwl-add-to-wishlist">
+																							<a href="#" class="add_to_wishlist"></a>
+																						</div>
+																					</div>
+																				</div>
+																			</figcaption>
+																		</figure>
+																	</div>
+																</li>
+																<li class="product">
+																	<div class="product-container">
+																		<figure>
+																			<div class="product-wrap">
+																				<div class="product-images">
+																					<a href="#">
+																						<div class="shop-loop-thumbnail">
+																							<img width="800" height="800" src="images/wine/product-thumb-274x274.jpg" alt="product-9"/>
+																						</div>
+																					</a>
+																				</div>
+																			</div>
+																			<figcaption>
+																				<div class="shop-loop-product-info">
+																					<div class="info-title">
+																						<h3 class="product_title">
+																							<a href="#">Nunc lacus sem</a>
+																						</h3>
+																					</div>
+																					<div class="info-rating">
+																						<div class="star-rating">
+																							<span style="width:0%"></span>
+																						</div>
+																					</div>
+																					<div class="info-meta">
+																						<div class="info-price">
+																							<span class="price">
+																								<span class="amount">
+																									&#36;10.95
+																								</span>
+																							</span>
+																						</div>
+																					</div>
+																					<div class="shop-loop-actions">
+																						<a class="shop-loop-quickview" href="#"></a>
+																						<a href="#" class="button">
+																							Add to cart
+																						</a>
+																						<div class="yith-wcwl-add-to-wishlist">
+																							<a href="#" class="add_to_wishlist"></a>
+																						</div>
+																					</div>
+																				</div>
+																			</figcaption>
+																		</figure>
+																	</div>
+																</li>
+																<li class="product">
+																	<div class="product-container">
+																		<figure>
+																			<div class="product-wrap">
+																				<div class="product-images">
+																					<a href="#">
+																						<div class="shop-loop-thumbnail">
+																							<img width="800" height="800" src="images/wine/product-thumb-274x274.jpg" alt="product-8"/>
+																						</div>
+																					</a>
+																				</div>
+																			</div>
+																			<figcaption>
+																				<div class="shop-loop-product-info">
+																					<div class="info-title">
+																						<h3 class="product_title">
+																							<a href="#">Mauris egestas</a>
+																						</h3>
+																					</div>
+																					<div class="info-rating">
+																						<div class="star-rating">
+																							<span style="width:0%"></span>
+																						</div>
+																					</div>
+																					<div class="info-meta">
+																						<div class="info-price">
+																							<span class="price">
+																								<span class="amount">
+																									&#36;14.95
+																								</span>
+																							</span>
+																						</div>
+																					</div>
+																					<div class="shop-loop-actions">
+																						<a class="shop-loop-quickview" href="#"></a>
+																						<a href="#" class="button">
+																							Add to cart
+																						</a>
+																						<div class="yith-wcwl-add-to-wishlist">
+																							<a href="#" class="add_to_wishlist"></a>
+																						</div>
+																					</div>
+																				</div>
+																			</figcaption>
+																		</figure>
+																	</div>
+																</li>
+																<li class="product">
+																	<div class="product-container">
+																		<figure>
+																			<div class="product-wrap">
+																				<div class="product-images">
+																					<a href="#">
+																						<div class="shop-loop-thumbnail">
+																							<img width="800" height="800" src="images/wine/product-thumb-274x274.jpg" alt="product-7"/>
+																						</div>
+																					</a>
+																				</div>
+																			</div>
+																			<figcaption>
+																				<div class="shop-loop-product-info">
+																					<div class="info-title">
+																						<h3 class="product_title">
+																							<a href="#">Morbi fermentum</a>
+																						</h3>
+																					</div>
+																					<div class="info-rating">
+																						<div class="star-rating">
+																							<span style="width:0%"></span>
+																						</div>
+																					</div>
+																					<div class="info-meta">
+																						<div class="info-price">
+																							<span class="price">
+																								<span class="amount">
+																									&#36;17.45
+																								</span>
+																							</span>
+																						</div>
+																					</div>
+																					<div class="shop-loop-actions">
+																						<a class="shop-loop-quickview" href="#"></a>
+																						<a href="#" class="button">
+																							Add to cart
+																						</a>
+																						<div class="yith-wcwl-add-to-wishlist">
+																							<a href="#" class="add_to_wishlist"></a>
+																						</div>
+																					</div>
+																				</div>
+																			</figcaption>
+																		</figure>
+																	</div>
+																</li>
+																<li class="product">
+																	<div class="product-container">
+																		<figure>
+																			<div class="product-wrap">
+																				<div class="product-images">
+																					<a href="#">
+																						<div class="shop-loop-thumbnail">
+																							<img width="800" height="800" src="images/wine/product-thumb-274x274.jpg" alt="product-6"/>
+																						</div>
+																					</a>
+																				</div>
+																			</div>
+																			<figcaption>
+																				<div class="shop-loop-product-info">
+																					<div class="info-title">
+																						<h3 class="product_title">
+																							<a href="#">Morbi fermentum</a>
+																						</h3>
+																					</div>
+																					<div class="info-rating">
+																						<div class="star-rating">
+																							<span style="width:60%"></span>
+																						</div>
+																					</div>
+																					<div class="info-meta">
+																						<div class="info-price">
+																							<span class="price">
+																								<span class="amount">
+																									&#36;23.00
+																								</span>
+																							</span>
+																						</div>
+																					</div>
+																					<div class="shop-loop-actions">
+																						<a class="shop-loop-quickview" href="#"></a>
+																						<a href="#" class="button">
+																							Add to cart
+																						</a>
+																						<div class="yith-wcwl-add-to-wishlist">
+																							<a href="#" class="add_to_wishlist"></a>
+																						</div>
+																					</div>
+																				</div>
+																			</figcaption>
+																		</figure>
+																	</div>
+																</li>
+																<li class="product">
+																	<div class="product-container">
+																		<figure>
+																			<div class="product-wrap">
+																				<div class="product-images">
+																					<a href="#">
+																						<div class="shop-loop-thumbnail">
+																							<img width="800" height="800" src="images/wine/product-thumb-274x274.jpg" alt="product-5"/>
+																						</div>
+																					</a>
+																				</div>
+																			</div>
+																			<figcaption>
+																				<div class="shop-loop-product-info">
+																					<div class="info-title">
+																						<h3 class="product_title">
+																							<a href="#">Ut quis est</a>
+																						</h3>
+																					</div>
+																					<div class="info-rating">
+																						<div class="star-rating">
+																							<span style="width:80%"></span>
+																						</div>
+																					</div>
+																					<div class="info-meta">
+																						<div class="info-price">
+																							<span class="price">
+																								<span class="amount">
+																									&#36;10.95
+																								</span>
+																							</span>
+																						</div>
+																					</div>
+																					<div class="shop-loop-actions">
+																						<a class="shop-loop-quickview" href="#"></a>
+																						<a href="#" class="button">
+																							Add to cart
+																						</a>
+																						<div class="yith-wcwl-add-to-wishlist">
+																							<a href="#" class="add_to_wishlist"></a>
+																						</div>
+																					</div>
+																				</div>
+																			</figcaption>
+																		</figure>
+																	</div>
+																</li>
+																<li class="product">
+																	<div class="product-container">
+																		<figure>
+																			<div class="product-wrap">
+																				<div class="product-images">
+																					<a href="#">
+																						<div class="shop-loop-thumbnail">
+																							<img width="800" height="800" src="images/wine/product-thumb-274x274.jpg" alt="product-4"/>
+																						</div>
+																					</a>
+																				</div>
+																			</div>
+																			<figcaption>
+																				<div class="shop-loop-product-info">
+																					<div class="info-title">
+																						<h3 class="product_title">
+																							<a href="#">Pesto Cauliflower</a>
+																						</h3>
+																					</div>
+																					<div class="info-rating">
+																						<div class="star-rating">
+																							<span style="width:0%"></span>
+																						</div>
+																					</div>
+																					<div class="info-meta">
+																						<div class="info-price">
+																							<span class="price">
+																								<span class="amount">
+																									&#36;15.05
+																								</span>
+																							</span>
+																						</div>
+																					</div>
+																					<div class="shop-loop-actions">
+																						<a class="shop-loop-quickview" href="#"></a>
+																						<a href="#" class="button">
+																							Add to cart
+																						</a>
+																						<div class="yith-wcwl-add-to-wishlist">
+																							<a href="#" class="add_to_wishlist"></a>
+																						</div>
+																					</div>
+																				</div>
+																			</figcaption>
+																		</figure>
+																	</div>
+																</li>
+																<li class="product">
+																	<div class="product-container">
+																		<figure>
+																			<div class="product-wrap">
+																				<div class="product-images">
+																					<a href="#">
+																						<div class="shop-loop-thumbnail">
+																							<img width="800" height="800" src="images/wine/product-thumb-274x274.jpg" alt="product-3"/>
+																						</div>
+																					</a>
+																				</div>
+																			</div>
+																			<figcaption>
+																				<div class="shop-loop-product-info">
+																					<div class="info-title">
+																						<h3 class="product_title">
+																							<a href="#">Jalapeno Dressing Salad</a>
+																						</h3>
+																					</div>
+																					<div class="info-rating">
+																						<div class="star-rating">
+																							<span style="width:0%"></span>
+																						</div>
+																					</div>
+																					<div class="info-meta">
+																						<div class="info-price">
+																							<span class="price">
+																								<span class="amount">
+																									&#36;17.75
+																								</span>
+																							</span>
+																						</div>
+																					</div>
+																					<div class="shop-loop-actions">
+																						<a class="shop-loop-quickview" href="#"></a>
+																						<a href="#" class="button">
+																							Add to cart
+																						</a>
+																						<div class="yith-wcwl-add-to-wishlist">
+																							<a href="#" class="add_to_wishlist"></a>
+																						</div>
+																					</div>
+																				</div>
+																			</figcaption>
+																		</figure>
+																	</div>
+																</li>
+																<li class="product">
+																	<div class="product-container">
+																		<figure>
+																			<div class="product-wrap">
+																				<div class="product-images">
+																					<a href="#">
+																						<div class="shop-loop-thumbnail">
+																							<img width="800" height="800" src="images/wine/product-thumb-274x274.jpg" alt="product-2"/>
+																						</div>
+																					</a>
+																				</div>
+																			</div>
+																			<figcaption>
+																				<div class="shop-loop-product-info">
+																					<div class="info-title">
+																						<h3 class="product_title">
+																							<a href="#">Green Chile Burritos</a>
+																						</h3>
+																					</div>
+																					<div class="info-rating">
+																						<div class="star-rating">
+																							<span style="width:0%"></span>
+																						</div>
+																					</div>
+																					<div class="info-meta">
+																						<div class="info-price">
+																							<span class="price">
+																								<span class="amount">
+																									&#36;10.75
+																								</span>
+																							</span>
+																						</div>
+																					</div>
+																					<div class="shop-loop-actions">
+																						<a class="shop-loop-quickview" href="#"></a>
+																						<a href="#" class="button">
+																							Add to cart
+																						</a>
+																						<div class="yith-wcwl-add-to-wishlist">
+																							<a href="#" class="add_to_wishlist"></a>
+																						</div>
+																					</div>
+																				</div>
+																			</figcaption>
+																		</figure>
+																	</div>
+																</li>
+																<li class="product">
+																	<div class="product-container">
+																		<figure>
+																			<div class="product-wrap">
+																				<div class="product-images">
+																					<a href="#">
+																						<div class="shop-loop-thumbnail">
+																							<img width="800" height="800" src="images/wine/product-thumb-274x274.jpg" alt="product-1"/>
+																						</div>
+																					</a>
+																				</div>
+																			</div>
+																			<figcaption>
+																				<div class="shop-loop-product-info">
+																					<div class="info-title">
+																						<h3 class="product_title">
+																							<a href="#">Creamy Spring Pasta</a>
+																						</h3>
+																					</div>
+																					<div class="info-rating">
+																						<div class="star-rating">
+																							<span style="width:0%"></span>
+																						</div>
+																					</div>
+																					<div class="info-meta">
+																						<div class="info-price">
+																							<span class="price">
+																								<span class="amount">
+																									&#36;23.00
+																								</span>
+																							</span>
+																						</div>
+																					</div>
+																					<div class="shop-loop-actions">
+																						<a class="shop-loop-quickview" href="#"></a>
+																						<a href="#" class="button">
+																							Add to cart
+																						</a>
+																						<div class="yith-wcwl-add-to-wishlist">
+																							<a href="#" class="add_to_wishlist"></a>
+																						</div>
+																					</div>
+																				</div>
+																			</figcaption>
+																		</figure>
+																	</div>
+																</li>
+															</ul>
+														</div>
+														<a href="#" class="caroufredsel-prev"></a>
+														<a href="#" class="caroufredsel-next"></a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">
+										<div class="container">
+											<div class="col-md-3 col-sm-6">
+												<div class="box visible-sm-inline-block visible-md-inline-block visible-lg-inline-block box-custom-margin-padding mbn-5">
+													<div class="single-image image-right">
+														<img width="226" height="500" src="images/vine-2.png" alt="vine-2"/>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-6 col-sm-6">
+												<h3 class="text-center heading-custom-font pt-7 m-0 white">
+													Special Event
+												</h3>
+												<h2 class="text-center m-0 white">
+													WINE TASTING
+												</h2>
+												<div class="single-image image-center pb-2">
+													<img width="198" height="7" src="images/vicky-vine-line-white.png" alt="vicky-vine-line-white"/>
+												</div>
+												<div class="text-block pb-4">
+													<p class="text-center white">
+														7 PM, Saturday, October, 26th 2015
+													</p>
+													<p class="text-center white">
+														The Tasting Room Restaurant, 264 Elixabeth Street, New York City.
+													</p>
+												</div>
+												<div data-toggle="countdown" 
 
-                <div class="section_child col-lg-12 col-md-12 col-sm-12">
-                    <p class="title_child" id="gg"><span style="color: #f4645f;">#</span> Google</p>
-                    <div class="block block col-lg-12 col-md-12 col-sm-12"><span class="method">Method: </span><span>POST</span>
-                    </div>
-                    <br>
-                    <div class="block block col-lg-12 col-md-12 col-sm-12"><span class="url">URL: </span><span><a>/login/loginGoogle</a></span>
-                    </div>
-                    <br>
-                    <div class="block block col-lg-12 col-md-12 col-sm-12"><span class="params">Parameters: </span>
-                        <ul class="">
-                            <li><span class="param">google_id : </span><span>id của tài khoản google</span></li>
-                            <li><span class="param">name : </span><span>Tên của tài khoản google</span></li>
-                            <li><span class="param">email : </span><span>Email của tài khoản google</span></li>
-                        </ul>
-                    </div>
-                    <br>
-                    <div class="block col-lg-12 col-md-12 col-sm-12">
-                        <span class="response">Response: </span><br>
-                        <pre class="col-lg-8 col-md-8 col-sm-8"><code class="language-json">
-{
-    "status": 1,
-    "messages": "Logged in",
-    "data": {
-        "userId": 10,
-        "user_email": "312321",
-        "user_avatar": null,
-        "last_login": "2016-10-10 14:44:42",
-        "patient": [
-            {
-                "id": 10,
-                "patient_name": "312",
-                "patient_type": 1,
-                "relationship": null,
-                "user_id": 10,
-                "dob": null,
-                "height": null,
-                "weight": null,
-                "blood_type": null,
-                "gender": 1,
-                "address": null,
-                "job": null,
-                "ward_id": null,
-                "district_id": null,
-                "province_id": null
-            }
-        ]
-    }
-}
-                    </code></pre>
-                    </div>
-                    <br>
-                </div>
+													 data-html="
+														
+														&lt;div class=&quot;countdown-item&quot;&gt;
+															&lt;div class=&quot;countdown-item-label&quot;&gt;Days&lt;/div&gt;
+															&lt;div class=&quot;countdown-item-value&quot;&gt;%D&lt;/div&gt;
+														&lt;/div&gt;
 
-                <!-- Close section-->
-            </div>
+														&lt;div class=&quot;countdown-item&quot;&gt;
+															&lt;div class=&quot;countdown-item-label&quot;&gt;Hours&lt;/div&gt;
+															&lt;div class=&quot;countdown-item-value&quot;&gt;%H&lt;/div&gt;
+														&lt;/div&gt;
 
-            <!-- Close Parent section-->
+														&lt;div class=&quot;countdown-item&quot;&gt;
+															&lt;div class=&quot;countdown-item-label&quot;&gt;Minuts&lt;/div&gt;
+															&lt;div class=&quot;countdown-item-value&quot;&gt;%M&lt;/div&gt;
+														&lt;/div&gt;
 
-            <!-- Open Parent section-->
-            <div class="section col-lg-12 col-md-12 col-sm-12">
-                <p class="title_parent">Type</p>
-                <!-- Open section-->
-                <div class="section_child col-lg-12 col-md-12 col-sm-12">
-                    <p class="title_child" id="type"><span style="color: #f4645f;">#</span> Lấy danh sách loại cơ sở</p>
-                    <div class="block block col-lg-12 col-md-12 col-sm-12"><span class="method">Method: </span><span>GET</span>
-                    </div>
-                    <br>
-                    <div class="block block col-lg-12 col-md-12 col-sm-12"><span class="url">URL: </span><span><a>/clinic/getTypes</a></span>
-                    </div>
-                    <br>
-                    <div class="block col-lg-12 col-md-12 col-sm-12">
-                        <span class="response">Response: </span><br>
-                        <pre class="col-lg-8 col-md-8 col-sm-8"><code class="language-json">
-{
-    "status": 1,
-    "message": "Success",
-    "data": [
-        {
-            "id": 1,
-            "name": "Bệnh viện"
-        },
-        {
-            "id": 2,
-            "name": "Phòng khám"
-        },
-        {
-            "id": 3,
-            "name": "Hiệu thuốc Tây"
-        },
-        {
-            "id": 4,
-            "name": "Nha khoa"
-        },
-        {
-            "id": 5,
-            "name": "Nhãn khoa"
-        },
-        {
-            "id": 6,
-            "name": "Da liễu"
-        },
-        {
-            "id": 7,
-            "name": "Hiệu thuốc Đông y"
-        }
-    ]
-}
-                    </code></pre>
-                    </div>
-                    <br>
-                </div>
+														&lt;div class=&quot;countdown-item&quot;&gt;
+															&lt;div class=&quot;countdown-item-label&quot;&gt;Seconds&lt;/div&gt;
+															&lt;div class=&quot;countdown-item-value&quot;&gt;%S&lt;/div&gt;
+														&lt;/div&gt;" 
 
-                <!-- Close section-->
+													data-end="2015/12/20" class="countdown countdown-white pb-7" data-now="1444731440">
+													<div class="countdown-wrap">
+														<div class="countdown-content clearfix"></div>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-3 col-sm-6">
+												<div class="box visible-lg-inline-block box-custom-margin-padding mbn-5">
+													<div class="single-image image-left">
+														<img width="271" height="500" src="images/vine-3.png" alt="vine-3"/>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row-image-bg bg-wine" data-parallax="1" data-parallax-speed="0.1"></div>
+								</div>
+								<div class="row pt-12 pb-7 bg-white home-wine-about">
+									<div class="col-md-12">
+										<div class="row pb-5">
+											<div class="col-md-12">
+												<h3 class="text-center heading-custom-font m-0">
+													Our Menu
+												</h3>
+												<h2 class="text-center m-0">
+													SPECIAL MENU TODAY
+												</h2>
+												<div class="single-image image-center">
+													<img width="198" height="7" src="images/vicky-vine-line.png" alt="vicky-vine-line"/>
+												</div>
+											</div>
+										</div>
+										<div class="container">
+											<div class="row">
+												<div class="col-md-4 col-sm-4">
+													<div class="dh-menu-wrap">
+														<div class="dh-menu-container">
+															<div class="menu-row menu-row-even row-last-child">
+																<div class=" menu-cat-item-wrap">
+																	<div class="menu-cat-items">
+																		<div class="menu-cat-item">
+																			<h4 class="menu-cat-item-name">
+																				Soft-Boiled Organic Egg
+																			</h4>
+																			<ul class="menu-cat-item-lists">
+																				<li class="clearfix">
+																					<div class="menu-cat-item-list-wrap">
+																						<span class="menu-cat-item-text">
+																							with “soldiers”
+																						</span>
+																						<small class="menu-cat-item-space">
+																							<i></i>
+																						</small>
+																						<span class="pull-right menu-cat-item-price">
+																							5.00$
+																						</span>
+																					</div>
+																				</li>
+																			</ul>
+																		</div>
+																		<div class="menu-cat-item">
+																			<h4 class="menu-cat-item-name">
+																				Eggs Any Style
+																			</h4>
+																			<ul class="menu-cat-item-lists">
+																				<li class="clearfix">
+																					<div class="menu-cat-item-list-wrap">
+																						<span class="menu-cat-item-text">
+																							with homefries &amp; toast
+																						</span>
+																						<small class="menu-cat-item-space">
+																							<i></i>
+																						</small>
+																						<span class="pull-right menu-cat-item-price">
+																							16.00$
+																						</span>
+																					</div>
+																				</li>
+																			</ul>
+																		</div>
+																		<div class="menu-cat-item">
+																			<h4 class="menu-cat-item-name">
+																				Scrambled Eggs in Puff Pastry
+																			</h4>
+																			<ul class="menu-cat-item-lists">
+																				<li class="clearfix">
+																					<div class="menu-cat-item-list-wrap">
+																						<span class="menu-cat-item-text">
+																							with wild mushrooms
+																						</span>
+																						<small class="menu-cat-item-space">
+																							<i></i>
+																						</small>
+																						<span class="pull-right menu-cat-item-price">
+																							16.00$
+																						</span>
+																					</div>
+																				</li>
+																			</ul>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-4 col-sm-4">
+													<div class="dh-menu-wrap">
+														<div class="dh-menu-container">
+															<div class="menu-row menu-row-even row-last-child">
+																<div class=" menu-cat-item-wrap">
+																	<div class="menu-cat-items">
+																		<div class="menu-cat-item">
+																			<h4 class="menu-cat-item-name">
+																				Soft-Boiled Organic Egg
+																			</h4>
+																			<ul class="menu-cat-item-lists">
+																				<li class="clearfix">
+																					<div class="menu-cat-item-list-wrap">
+																						<span class="menu-cat-item-text">
+																							with “soldiers”
+																						</span>
+																						<small class="menu-cat-item-space">
+																							<i></i>
+																						</small>
+																						<span class="pull-right menu-cat-item-price">
+																							5.00$
+																						</span>
+																					</div>
+																				</li>
+																			</ul>
+																		</div>
+																		<div class="menu-cat-item">
+																			<h4 class="menu-cat-item-name">
+																				Eggs Any Style
+																			</h4>
+																			<ul class="menu-cat-item-lists">
+																				<li class="clearfix">
+																					<div class="menu-cat-item-list-wrap">
+																						<span class="menu-cat-item-text">
+																							with homefries &amp; toast
+																						</span>
+																						<small class="menu-cat-item-space">
+																							<i></i>
+																						</small>
+																						<span class="pull-right menu-cat-item-price">
+																							16.00$
+																						</span>
+																					</div>
+																				</li>
+																			</ul>
+																		</div>
+																		<div class="menu-cat-item">
+																			<h4 class="menu-cat-item-name">
+																				Scrambled Eggs in Puff Pastry
+																			</h4>
+																			<ul class="menu-cat-item-lists">
+																				<li class="clearfix">
+																					<div class="menu-cat-item-list-wrap">
+																						<span class="menu-cat-item-text">
+																							with wild mushrooms
+																						</span>
+																						<small class="menu-cat-item-space">
+																							<i></i>
+																						</small>
+																						<span class="pull-right menu-cat-item-price">
+																							16.00$
+																						</span>
+																					</div>
+																				</li>
+																			</ul>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-4 col-sm-4">
+													<div class="dh-menu-wrap">
+														<div class="dh-menu-container">
+															<div class="menu-row menu-row-even row-last-child">
+																<div class=" menu-cat-item-wrap">
+																	<div class="menu-cat-items">
+																		<div class="menu-cat-item">
+																			<h4 class="menu-cat-item-name">
+																				Soft-Boiled Organic Egg
+																			</h4>
+																			<ul class="menu-cat-item-lists">
+																				<li class="clearfix">
+																					<div class="menu-cat-item-list-wrap">
+																						<span class="menu-cat-item-text">
+																							with “soldiers”
+																						</span>
+																						<small class="menu-cat-item-space">
+																							<i></i>
+																						</small>
+																						<span class="pull-right menu-cat-item-price">
+																							5.00$
+																						</span>
+																					</div>
+																				</li>
+																			</ul>
+																		</div>
+																		<div class="menu-cat-item">
+																			<h4 class="menu-cat-item-name">
+																				Eggs Any Style
+																			</h4>
+																			<ul class="menu-cat-item-lists">
+																				<li class="clearfix">
+																					<div class="menu-cat-item-list-wrap">
+																						<span class="menu-cat-item-text">
+																							with homefries &amp; toast
+																						</span>
+																						<small class="menu-cat-item-space">
+																							<i></i>
+																						</small>
+																						<span class="pull-right menu-cat-item-price">
+																							16.00$
+																						</span>
+																					</div>
+																				</li>
+																			</ul>
+																		</div>
+																		<div class="menu-cat-item">
+																			<h4 class="menu-cat-item-name">
+																				Scrambled Eggs in Puff Pastry
+																			</h4>
+																			<ul class="menu-cat-item-lists">
+																				<li class="clearfix">
+																					<div class="menu-cat-item-list-wrap">
+																						<span class="menu-cat-item-text">
+																							with wild mushrooms
+																						</span>
+																						<small class="menu-cat-item-space">
+																							<i></i>
+																						</small>
+																						<span class="pull-right menu-cat-item-price">
+																							16.00$
+																						</span>
+																					</div>
+																				</li>
+																			</ul>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="row row-custom-padding pt-5 pb-5">
+									<div class="col-md-12">
+										<div class="container">
+											<div class="row bg-image">
+												<div class="no-padding-right col-md-6 col-sm-6">
+													<div class="box box-custom-margin-padding pt-6 pb-6 pl-4 pr-4">
+														<h3 class="text-center heading-custom-font white m-0">
+															Our Gallery
+														</h3>
+														<h2 class="text-center white m-0">
+															VINEYARD
+														</h2>
+														<div class="single-image image-center">
+															<img width="198" height="7" src="images/vicky-vine-line-white.png" alt="vicky-vine-line-white"/>
+														</div>
+														<div class="text-block white pt-2 pb-2">
+															I am text block. Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+														</div>
+														<button class="btn btn-white btn-icon-left btn-effect-icon-slide-in btn-align-center" type="button">
+															<span>VIEW ALL</span>
+															<i class="fa fa-long-arrow-right"></i>
+														</button>
+													</div>
+												</div>
+												<div class="no-padding-left col-md-6 col-sm-6"></div>
+												<div class="row-image-bg bg-wine-2"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="row pt-7 pb-7">
+									<div class="col-md-12">
+										<div class="container">
+											<h3 class="text-center heading-custom-font white m-0">
+												Our Clients
+											</h3>
+											<h2 class="text-center white m-0">
+												REVIEWS
+											</h2>
+											<div class="single-image image-center">
+												<img width="198" height="7" src="images/vicky-vine-line-white.png" alt="vicky-vine-line-white"/>
+											</div>
+											<div class="row pt-2">
+												<div class="visible-lg-inline-block col-md-12">
+													<div class="box box-custom-margin-padding pf-4 pr-4">
+														<div class="testimonial bg-transparent">
+															<div class="caroufredsel" data-visible="1" data-scroll-fx="scroll" data-speed="5000" data-responsive="1" data-infinite="1" data-autoplay="0">
+																<div class="caroufredsel-wrap">
+																	<ul class="caroufredsel-items">
+																		<li class="caroufredsel-item">
+																			<div class="testimonial-wrap">
+																				<div class="testimonial-text">
+																					<span>&#147;</span>
+																					Aenean sit amet rutrum est. Sed vitae nulla eu risus tincidunt consectetur sed quis felis. Sed sodales orci metus, nec dignissim nunc mollis at. Donec urna sem, sagittis et efficitur et, accumsan vel ligula. Nam pellentesque ipsum tortor, sed ultricies urna tincidunt vel.
+																					<span>&#148;</span>
+																				</div>
+																				<div class="testimonial-avatar">
+																					<img src="images/avatar/avatar-thumb-150x150.png" alt=""/>
+																					<a href="#" class="caroufredsel-prev"></a>
+																					<a href="#" class="caroufredsel-next"></a>
+																				</div>
+																				<div class="testimonial-author">
+																					Jacky Jonh
+																				</div>
+																				<div class="testimonial-company">
+																					chief cooker
+																				</div>
+																			</div>
+																		</li>
+																		<li class="caroufredsel-item">
+																			<div class="testimonial-wrap">
+																				<div class="testimonial-text">
+																					<span>&#147;</span>
+																					Aenean sit amet rutrum est. Sed vitae nulla eu risus tincidunt consectetur sed quis felis. Sed sodales orci metus, nec dignissim nunc mollis at. Donec urna sem, sagittis et efficitur et, accumsan vel ligula. Nam pellentesque ipsum tortor, sed ultricies urna tincidunt vel.
+																					<span>&#148;</span>
+																				</div>
+																				<div class="testimonial-avatar">
+																					<img src="images/avatar/avatar-thumb-150x150.png" alt=""/>
+																					<a href="#" class="caroufredsel-prev"></a>
+																					<a href="#" class="caroufredsel-next"></a>
+																				</div>
+																				<div class="testimonial-author">
+																					Jacky Jonh
+																				</div>
+																				<div class="testimonial-company">
+																					chief cooker
+																				</div>
+																			</div>
+																		</li>
+																		<li class="caroufredsel-item">
+																			<div class="testimonial-wrap">
+																				<div class="testimonial-text">
+																					<span>&#147;</span>
+																					Aenean sit amet rutrum est. Sed vitae nulla eu risus tincidunt consectetur sed quis felis. Sed sodales orci metus, nec dignissim nunc mollis at. Donec urna sem, sagittis et efficitur et, accumsan vel ligula. Nam pellentesque ipsum tortor, sed ultricies urna tincidunt vel.
+																					<span>&#148;</span>
+																				</div>
+																				<div class="testimonial-avatar">
+																					<img src="images/avatar/avatar-thumb-150x150.png" alt=""/>
+																					<a href="#" class="caroufredsel-prev"></a>
+																					<a href="#" class="caroufredsel-next"></a>
+																				</div>
+																				<div class="testimonial-author">
+																					Jacky Jonh
+																				</div>
+																				<div class="testimonial-company">
+																					chief cooker
+																				</div>
+																			</div>
+																		</li>
+																	</ul>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row-image-bg bg-wine-3" data-parallax="1" data-parallax-speed="0.1"></div>
+								</div>
+								<div class="row pt-7 pb-7 home-wine-about bg-white">
+									<div class="col-md-12">
+										<div class="container">
+											<h3 class="text-center heading-custom-font m-0">
+												News &amp; Events
+											</h3>
+											<h2 class="text-center m-0">
+												OUR OF BLOG
+											</h2>
+											<div class="single-image image-center">
+												<img width="198" height="7" src="images/vicky-vine-line.png" alt="vicky-vine-line"/>
+											</div>
+											<div class="posts pt-4" data-paginate="no" data-layout="grid">
+												<div class="posts-wrap posts-layout-grid">
+													<article class="col-md-6 col-sm-6 hentry">
+														<div class="hentry-wrap">
+															<div class="entry-featured">
+																<a href="#">
+																	<img width="700" height="350" src="images/blog/blog-thumb-555x278.jpg" alt="blog-5"/>
+																</a>
+															</div>
+															<div class="entry-info">
+																<div class="entry-header">
+																	<h2 class="entry-title">
+																		<a href="#">Cheese Brie Sandwich </a>
+																	</h2>
+																	<div class="entry-meta icon-meta">
+																		<span class="meta-date">
+																			<time datetime="2015-04-28T08:40:24+00:00">
+																				<i class="fa fa-clock-o"></i>
+																				April 28, 2015
+																			</time>
+																		</span>
+																		<span class="meta-author">
+																			<i class="fa fa-user"></i>
+																			By <a href="#">sitesao</a>
+																		</span>
+																		<span class="meta-comment">
+																			<i class="fa fa-comment-o"></i>
+																			<a href="#">0 Comment</a>
+																		</span>
+																	</div>
+																</div>
+																<div class="entry-content">
+																	The key is to buy specific cuts for specific dishes and be firm with your butcher. Opt for tender cuts from the inner haunch muscle if you fancy steak and...
+																</div>
+																<div class="entry-footer">
+																	<div class="entry-tags">
+																		<a href="#">cheese</a><a href="#">sandwich</a>
+																	</div>
+																</div>
+																<div class="readmore-link">
+																	<a href="#">Read More</a>
+																</div>
+															</div>
+														</div>
+													</article>
+													<article class="col-md-6 col-sm-6 hentry">
+														<div class="hentry-wrap">
+															<div class="entry-featured">
+																<a href="#">
+																	<img width="700" height="350" src="images/blog/blog-thumb-555x278.jpg" alt="blog-7"/>
+																</a>
+															</div>
+															<div class="entry-info">
+																<div class="entry-header">
+																	<h2 class="entry-title">
+																		<a href="#">Fermentum Commodo Arcu </a>
+																	</h2>
+																	<div class="entry-meta icon-meta">
+																		<span class="meta-date">
+																			<time datetime="2015-04-28T08:40:24+00:00">
+																				<i class="fa fa-clock-o"></i>
+																				April 28, 2015
+																			</time>
+																		</span>
+																		<span class="meta-author">
+																			<i class="fa fa-user"></i>
+																			By <a href="#">sitesao</a>
+																		</span>
+																		<span class="meta-comment">
+																			<i class="fa fa-comment-o"></i>
+																			<a href="#">0 Comment</a>
+																		</span>
+																	</div>
+																</div>
+																<div class="entry-content">
+																	Donec imperdiet gravida lacinia erat iaculis proin pulvinar per, interdum viverra auctor sodales lobortis magna metus sed, purus blandit id nullam fermentum venenatis etiam ornare donec ultricies conubia imperdiet congue...
+																</div>
+																<div class="entry-footer">
+																	<div class="entry-tags">
+																		<a href="#">cheese</a><a href="#">sandwich</a>
+																	</div>
+																</div>
+																<div class="readmore-link">
+																	<a href="#">Read More</a>
+																</div>
+															</div>
+														</div>
+													</article>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="row pb-9 home-wine-join home-wine-about bg-white">
+									<div class="col-md-12">
+										<div class="container">
+											<div class="row pt-5 pb-5">
+												<div class="col-md-4 col-sm-4"></div>
+												<div class="col-md-8 col-sm-6">
+													<h3 class="text-center heading-custom-font m-0">
+														Wine Club
+													</h3>
+													<h2 class="text-center m-0">
+														JOIN OUR WINE CLUB
+													</h2>
+													<div class="single-image image-center">
+														<img width="198" height="7" src="images/vicky-vine-line.png" alt="vicky-vine-line"/>
+													</div>
+													<h3 class="text-center heading-custom-font pb-4">
+														Receive up to 20% off on all wine purchaces
+													</h3>
+													<button class="btn btn-custom-color btn-align-center" data-hover-background-color="#8c001a" data-hover-border-color="#8c001a" data-hover-color="#ffffff" type="button">
+														<span>JOIN NOW</span>
+													</button>
+												</div>
+												<div class="row-image-bg bg-wine-4"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer-widget">
+				<div class="container">
+					<div class="footer-widget-wrap">
+						<div class="row">
+							<div class="footer-widget-col col-md-3 col-sm-6">
+								<div class="widget widget_text">
+									<h3 class="widget-title">
+										<span>Business Hours</span>
+									</h3>
+									<div class="textwidget">
+										<p>
+											Vicky Restaurant opended in 1999 - We specialize in three course tasting menus, allowing the customer to select any three dishes from the menu for $52 per person.
+										</p>
+										<p>
+											<strong>Mon - Fri: ---------- 8am - 5pm</strong><br/>
+											<strong>Sat: ------------------ 8am - 11pm</strong><br/>
+											<strong>Sun: ----------------- Closed</strong>
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="footer-widget-col col-md-3 col-sm-6">
+								<div class="widget widget-post-thumbnail">
+									<h3 class="widget-title">
+										<span>Recent News</span>
+									</h3>
+									<ul class="posts-thumbnail-list">
+										<li>
+											<div class="posts-thumbnail-image">
+												<a href="#">
+													<img width="600" height="319" src="images/blog/blog-thumb-60x32.jpg" alt="blog-5" />
+												</a>
+											</div>
+											<div class="posts-thumbnail-content">
+												<h4><a href="#">Cheese Brie Sandwich</a></h4>
+												<div class="posts-thumbnail-meta">
+													<time datetime="2015-04-28T08:40:24+00:00">April 28, 2015</time>, 
+													<span class="comment-count">
+														<a href="#">0 Comments</a>
+													</span>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="posts-thumbnail-image">
+												<a href="#">
+													<img width="600" height="319" src="images/blog/blog-thumb-60x32.jpg" alt="blog-2" />
+												</a>
+											</div>
+											<div class="posts-thumbnail-content">
+												<h4><a href="#">Fermentum Commodo Arcu</a></h4>
+												<div class="posts-thumbnail-meta">
+													<time datetime="2015-04-28T08:40:24+00:00">April 28, 2015</time>, 
+													<span class="comment-count">
+														<a href="#">0 Comments</a>
+													</span>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="posts-thumbnail-image">
+												<a href="#">
+													<img width="600" height="319" src="images/blog/blog-thumb-60x32.jpg" alt="blog-3" />
+												</a>
+											</div>
+											<div class="posts-thumbnail-content">
+												<h4><a href="#">Cooking Lesson</a></h4>
+												<div class="posts-thumbnail-meta">
+													<time datetime="2015-04-28T08:40:24+00:00">April 28, 2015</time>, 
+													<span class="comment-count">
+														<a href="#">0 Comments</a>
+													</span>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="footer-widget-col col-md-3 col-sm-6">
+								<div class="widget tweets-widget">
+									<h3 class="widget-title">
+										<span>Latest Tweets</span>
+									</h3>
+									<div class="recent-tweets">
+										<ul>
+											<li>
+												<span>
+													Social Login for Magento allow users to log into your store through their social profiles <a href="#" target="_blank">http://t.co/H6b1SdBddu</a> <a href="#" target="_blank">http://t.co/cG9vSZoTjy</a>
+												</span>
+												<a class="twitter_time" target="_blank" href="#">223 days ago</a>
+											</li>
+											<li>
+												<span>
+													Copy VC shortcode for different purposes: in WP Widget Text, in do_shortcode function…. <a href="#" target="_blank">http://t.co/kgeZgVppr1</a> <a href="#" target="_blank">http://t.co/UT26ch7daD</a>
+												</span>
+												<a class="twitter_time" target="_blank" href="#">229 days ago</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="footer-widget-col col-md-3 col-sm-6">
+								<div class="widget widget_nav_menu">
+									<h3 class="widget-title">
+										<span>Infomation</span>
+									</h3>
+									<div class="menu-infomation-container">
+										<ul class="menu">
+											<li><a href="#">Legal Notice</a></li>
+											<li><a href="#">Terms of use</a></li>
+											<li><a href="#">About us</a></li>
+											<li><a href="#">Secure payment</a></li>
+											<li><a href="#">Typo</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer class="footer">
+				<div class="footer-info">
+					<div class="container">
+						<div class="footer-info-wrap">
+							<div class="row">
+								<div class="col-md-4 hidden-sm hidden-xs">
+									<div class="copyright text-left">Vicky Restaurant © 2015</div>
+								</div>
+								<div class="col-md-4 col-sm-12 text-center">
+									<div class="footer-info-logo">
+										<a href="#">
+											<img alt="Vicky Restaurant" src="images/footer-logo-wine.png">
+										</a>
+									</div>
+									<div class="footer-social">
+										<a href="#" title="Facebook" target="_blank">
+											<i class="fa fa-facebook facebook-bg-hover"></i>
+										</a>
+										<a href="#" title="Twitter" target="_blank">
+											<i class="fa fa-twitter twitter-bg-hover"></i>
+										</a>
+										<a href="#" title="Google+" target="_blank">
+											<i class="fa fa-google-plus google-plus-bg-hover"></i>
+										</a>
+										<a href="#" title="Pinterest" target="_blank">
+											<i class="fa fa-pinterest pinterest-bg-hover"></i>
+										</a>
+										<a href="#" title="RSS" target="_blank">
+											<i class="fa fa-rss rss-bg-hover"></i>
+										</a>
+										<a href="#" title="Instagram" target="_blank">
+											<i class="fa fa-instagram instagram-bg-hover"></i>
+										</a>
+									</div>
+								</div>
+								<div class="col-md-4 hidden-sm hidden-xs">
+									<div class="footer-info-text text-right">
+										Designed by <a href="#">Sitesao</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+		
+		<a href="#" class="go-to-top"><i class="fa fa-angle-up"></i></a>
 
+		<script type='text/javascript' src='js/jquery-1.11.3.min.js'></script>
+		<script type='text/javascript' src='js/jquery-migrate.min.js'></script>
+		<script type='text/javascript' src='js/jquery.themepunch.tools.min.js'></script>
+		<script type='text/javascript' src='js/jquery.themepunch.revolution.min.js'></script>
+		<script type='text/javascript' src='js/jquery.validate.min.js'></script>
+		<script type='text/javascript' src='js/easing.min.js'></script>
+		<script type='text/javascript' src='js/imagesloaded.pkgd.min.js'></script>
+		<script type='text/javascript' src='js/bootstrap.min.js'></script>
+		<script type='text/javascript' src='js/superfish-1.7.4.min.js'></script>
+		<script type='text/javascript' src='js/jquery.appear.min.js'></script>
+		<script type='text/javascript' src='js/script.js'></script>
+		<script type='text/javascript' src='js/jquery.blockUI.min.js'></script>
+		<script type='text/javascript' src='js/jquery.touchSwipe.min.js'></script>
+		<script type='text/javascript' src='js/jquery.carouFredSel.min.js'></script>
+		<script type='text/javascript' src='js/isotope.pkgd.min.js'></script>
+		<script type='text/javascript' src='js/jquery.magnific-popup.min.js'></script>
+		<script type='text/javascript' src='js/jquery.countdown.min.js'></script>
+		<script type='text/javascript' src='js/jquery.datetimepicker.js'></script>
+		<script type='text/javascript' src='js/jquery.stellar.min.js'></script>
+		<script type='text/javascript' src='js/jquery.parallax.js'></script>
+		<script type='text/javascript' src='js/preloader.min.js'></script>
+		<script>
+            jQuery(document).ready(function(){
+                jQuery('.dhvc-form-datepicker').datetimepicker();
+            });
+        </script>
+		<script type="text/javascript">
 
-            </div>
+			var tpj=jQuery;
+			tpj.noConflict();
+			var revapi3;
 
-            <!-- Close Parent section-->
+			tpj(document).ready(function() {
 
-            <!-- Open Parent section-->
-            <div class="section col-lg-12 col-md-12 col-sm-12">
-                <p class="title_parent">Maps</p>
-                <!-- Open section-->
-                <div class="section_child col-lg-12 col-md-12 col-sm-12">
-                    <p class="title_child" id="near"><span style="color: #f4645f;">#</span> Lấy cơ sở lân cận</p>
-                    <div class="block block col-lg-12 col-md-12 col-sm-12"><span class="method">Method: </span><span>GET</span>
-                    </div>
-                    <br>
-                    <div class="block block col-lg-12 col-md-12 col-sm-12"><span class="url">URL: </span><span><a>/clinic/getNearClinic</a></span>
-                    </div>
-                    <br>
-                    <div class="block block col-lg-12 col-md-12 col-sm-12"><span class="params">Parameters: </span>
-                        <ul class="">
-                            <li><span class="param">lat : </span><span>Latitude hiện tại của người dùng</span></li>
-                            <li><span
-                                    class="param">long : </span><span>Longitude hiện tại của người dùng</span>
-                            </li>
-                            <li><span class="param">rad : </span><span>Bán kính (400m là đẹp)</span></li>
-                            <li><span class="param">typeId (optional) : </span><span>Loại phòng khám, nếu có nhiều hơn 2 type thì cách nhau dấu phẩy ","</span></li>
-                        </ul>
-                    </div>
-                    <br>
-                    <div class="block block col-lg-12 col-md-12 col-sm-12"><span class="example">Example: </span><span><a>http://192.168.2.14:8000/api/clinic/getNearClinic?lat=21.0319322&long=105.7992144&rad=400&typeId=1,2,3</a></span>
-                    </div>
-                    <br>
-                    <div class="block col-lg-12 col-md-12 col-sm-12">
-                        <span class="response">Response: </span><br>
-                        <pre class="col-lg-8 col-md-8 col-sm-8"><code class="language-json">
-{
-    "status": 1,
-    "message": "Success",
-    "data": [
-        {
-            "id": 3357,
-            "clinic_lat": 21.032301,
-            "clinic_long": 105.799004,
-            "clinic_name": "Hiệu thuốc Cầu Giấy Pharmacy",
-            "clinic_address": "157, Cầu Giấy, Phường Quan Hoa, Quận Cầu Giấy, Hà Nội",
-            "clinic_type": 3,
-            "distance": "46.5"
-        },
-        {
-            "id": 525,
-            "clinic_lat": 21.032642,
-            "clinic_long": 105.798889,
-            "clinic_name": "Phòng khám tư nhân Răng - Hàm - Mặt",
-            "clinic_address": "157, Cầu Giấy, Phường Quan Hoa, Quận Cầu Giấy, Hà Nội",
-            "clinic_type": 2,
-            "distance": "85.8"
-        }
-    ]
-}
-                    </code></pre>
-                    </div>
-                    <br>
-                </div>
+			if(tpj('#rev_slider').revolution == undefined){
+				revslider_showDoubleJqueryError('#rev_slider');
+			}else{
+			   revapi3 = tpj('#rev_slider').show().revolution(
+				{	
+					dottedOverlay:"none",
+					delay:8000,
+					startwidth:1920,
+					startheight:800,
+					hideThumbs:200,
 
-                <!-- Close section-->
+					thumbWidth:100,
+					thumbHeight:50,
+					thumbAmount:2,
+					
+											
+					simplifyAll:"off",
 
+					navigationType:"none",
+					navigationArrows:"solo",
+					navigationStyle:"preview1",
 
-            </div>
+					touchenabled:"on",
+					onHoverStop:"on",
+					nextSlideOnWindowFocus:"off",
 
-            <!-- Close Parent section-->
+					swipe_threshold: 75,
+					swipe_min_touches: 1,
+					drag_block_vertical: false,
+					panZoomDisableOnMobile:"on",
+												
+					keyboardNavigation:"off",
 
-            <!-- Open Parent section-->
-            <div class="section col-lg-12 col-md-12 col-sm-12">
-                <p class="title_parent">Search</p>
-                <!-- Open section-->
-                <div class="section_child col-lg-12 col-md-12 col-sm-12">
-                    <p class="title_child" id="search"><span style="color: #f4645f;">#</span> Tìm kiếm cơ sở bằng bộ lọc</p>
-                    <div class="block block col-lg-12 col-md-12 col-sm-12"><span class="method">Method: </span><span>GET</span>
-                    </div>
-                    <br>
-                    <div class="block block col-lg-12 col-md-12 col-sm-12"><span class="url">URL: </span><span><a>/clinic/getByFilter</a></span>
-                    </div>
-                    <br>
-                    <div class="block block col-lg-12 col-md-12 col-sm-12"><span class="params">Parameters: </span>
-                        <ul class="">
-                            <li><span class="param">page : </span><span>Trang muốn lấy</span></li>
-                            <li><span class="param">limit : </span><span>Giới hạn số cơ sở lấy về trong 1 trang</span></li>
-                            <li><span class="param">lat (optional): </span><span>Latitude hiện tại của người dùng</span></li>
-                            <li><span class="param">long (optional): </span><span>Longitude hiện tại của người dùng</span></li>
-                            <li><span class="param">proId (optional): </span><span>ID của tỉnh/thành phố</span></li>
-                            <li><span class="param">disId (optional): </span><span>ID của quận/huyện</span></li>
-                            <li><span class="param">wardId (optional): </span><span>ID của phường/xã</span></li>
-                            <li><span class="param">typeId (optional) : </span><span>Loại phòng khám, nếu có nhiều hơn 2 type thì cách nhau dấu phẩy ","</span></li>
-                        </ul>
-                    </div>
-                    <br>
-                    <div class="block block col-lg-12 col-md-12 col-sm-12"><span class="example">Example: </span><span><a>http://192.168.2.14:8000/api/clinic/getByFilter?lat=21.0319198&long=105.7991067&proId=1&disId=&wardId=&typeId=&limit=10&page=1</a></span>
-                    </div>
-                    <br>
-                    <div class="block col-lg-12 col-md-12 col-sm-12">
-                        <span class="response">Response: </span><br>
-                        <pre class="col-lg-8 col-md-8 col-sm-8"><code class="language-json">
-{
-    "status": 1,
-    "message": "Success",
-    "data": {
-        "total": 8256,
-        "current_page": 1,
-        "last_page": 826,
-        "data": [
-            {
-                "id": 1,
-                "clinic_lat": 21.040697,
-                "clinic_long": 105.793999,
-                "clinic_name": "Bệnh viện quốc tế Hoa Kỳ Hà Nội",
-                "clinic_address": "1 Chùa Hà, Phường Dịch Vọng, Quận Cầu Giấy, Hà Nội",
-                "clinic_type": 1,
-                "distance": "1110.6"
-            },
-            {
-                "id": 2,
-                "clinic_lat": 21.0247,
-                "clinic_long": 105.805,
-                "clinic_name": "Khoa Nội C Bệnh viện Giao thông vận tải Trung ương",
-                "clinic_address": "Ngõ 84 Chùa Láng, phường\nLáng Thượng, Quận\nĐống Đa,\nHà Nội",
-                "clinic_type": 1,
-                "distance": "1009.3"
-            }
-        ]
-    }
-}
-                    </code></pre>
-                    </div>
-                    <br>
-                </div>
+					navigationHAlign:"center",
+					navigationVAlign:"bottom",
+					navigationHOffset:0,
+					navigationVOffset:20,
 
-                <!-- Close section-->
+					soloArrowLeftHalign:"left",
+					soloArrowLeftValign:"center",
+					soloArrowLeftHOffset:20,
+					soloArrowLeftVOffset:0,
 
+					soloArrowRightHalign:"right",
+					soloArrowRightValign:"center",
+					soloArrowRightHOffset:20,
+					soloArrowRightVOffset:0,
 
-            </div>
+					shadow:0,
+					fullWidth:"on",
+					fullScreen:"off",
+					spinner:"spinner0",
+											
+					stopLoop:"off",
+					stopAfterLoops:-1,
+					stopAtSlide:-1,
 
-            <!-- Close Parent section-->
+					shuffle:"off",
 
-            <!-- Open Parent section-->
-            <div class="section col-lg-12 col-md-12 col-sm-12">
-                <p class="title_parent">Detail</p>
-                <!-- Open section-->
-                <div class="section_child col-lg-12 col-md-12 col-sm-12">
-                    <p class="title_child" id="detail"><span style="color: #f4645f;">#</span> Lấy chi tiết phòng khám</p>
-                    <div class="block block col-lg-12 col-md-12 col-sm-12"><span class="method">Method: </span><span>GET</span>
-                    </div>
-                    <br>
-                    <div class="block block col-lg-12 col-md-12 col-sm-12"><span class="url">URL: </span><span><a>/clinic/getClinicDetail</a></span>
-                    </div>
-                    <br>
-                    <div class="block block col-lg-12 col-md-12 col-sm-12"><span class="params">Parameters: </span>
-                        <ul class="">
-                            <li><span class="param">userId : </span><span>ID của người dùng</span></li>
-                            <li><span class="param">clinicId : </span><span>ID của cơ sở</span></li>
-                        </ul>
-                    </div>
-                    <br>
-                    <div class="block block col-lg-12 col-md-12 col-sm-12"><span class="example">Example: </span><span><a>http://192.168.2.14:8000/api/clinic/getClinicDetail?userId=1&clinicId=529</a></span>
-                    </div>
-                    <br>
-                    <div class="block col-lg-12 col-md-12 col-sm-12">
-                        <span class="response">Response: </span><br>
-                        <pre class="col-lg-8 col-md-8 col-sm-8"><code class="language-json">
-{
-    "status": 1,
-    "message": "Success",
-    "data": {
-        "is_bookmarked": 1,
-        "clinic_info": {
-            "id": 529,
-            "clinic_name": "Phòng khám Sản phụ khoa và Siêu Âm 4D Hà Nội",
-            "clinic_address": "61, Bờ Sông, Phường Quan Hoa, Quận Cầu Giấy, Hà Nội",
-            "clinic_type": 2,
-            "clinic_website": "http://example.com.vn",
-            "clinic_phone": "(84) 123.456.789 - (04) 978.654.321",
-            "clinic_time": "<p>Sáng: 07:00 - 11:30</p><p>Chiều: 13:00 - 08:30</p>",
-            "clinic_description": "<p>Phòng khám nha khoa thẩm mỹ Hàn Lâm được thành lập vào năm 1991</p><p>Nha khoa Thẩm mỹ Hàn Lâm chuyên điều trị các vấn đề răng hàm mặt, chỉnh nha,..</p>",
-            "clinic_rating": 4
-        },
-        "user_rating": 0,
-        "clinic_image": [],
-        "rates_number": 1,
-        "views_number": 252,
-        "reviews": [
-            {
-                "id": 47,
-                "user_id": 2,
-                "review": "new comment fix",
-                "created_at": "2016-10-03 14:36:15",
-                "updated_at": "2016-10-03 14:36:15",
-                "userName": "Dai Pham Pham"
-            },
-            {
-                "id": 46,
-                "user_id": 2,
-                "review": "new",
-                "created_at": "2016-10-03 14:28:48",
-                "updated_at": "2016-10-03 14:28:48",
-                "userName": "Dai Pham Pham"
-            }
-        ]
-    }
-}
-                    </code></pre>
-                    </div>
-                    <br>
-                </div>
+					autoHeight:"off",
+					forceFullWidth:"off",
+					
+					
+					hideTimerBar:"on",
+					hideThumbsOnMobile:"on",
+					hideBulletsOnMobile:"on",
+					hideArrowsOnMobile:"on",
+					hideThumbsUnderResolution:0,
 
-                <!-- Close section-->
+					hideSliderAtLimit:0,
+					hideCaptionAtLimit:0,
+					hideAllCaptionAtLilmit:0,
+					startWithSlide:0 });
+				}
+			});	/*ready*/
 
-
-            </div>
-
-            <!-- Close Parent section-->
-        </div>
-    </div>
-</div>
-<script src="js/jquery-2.2.4.min.js"></script>
-<script src="js/prism.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/main.js"></script>
-</body>
+		</script>
+	</body>
 </html>
