@@ -1,0 +1,90 @@
+body {
+    color: #f4645f;
+    background: url("../images/cloud-bar.png") repeat-x #fff;
+    font-family: "Courier New", sans-serif;
+    font-size: 16px;
+}
+
+.navbar-default .navbar-brand {
+    color: #f4645f;
+    line-height: 40px;
+    min-height: 70px;
+    margin-left: 40px;
+}
+
+.host{
+    line-height: 40px;
+}
+
+.nav {
+    background-color: #FFFFFF;
+    margin-top: 10px;
+    min-height: 70px;
+    border-bottom: 1px solid #dee0df;
+}
+
+.container {
+
+}
+
+.navigation {
+    min-height: 100vh;
+    border-right: 1px solid #dee0df;
+}
+
+.list {
+    margin-top: 30px;
+}
+
+ol {
+    list-style: none;
+}
+
+ol a, ol a:hover {
+    color: #f4645f;
+}
+
+ol > li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: black;
+}
+
+ol > li > ol {
+    border-top: 1px dashed #dee0df;
+}
+
+ol > li > ol > li {
+    color: #f4645f;
+    border-bottom: none;
+}
+
+.container {
+    color: black;
+}
+
+.section {
+    margin-top: 70px;
+    margin-left: 50px;
+}
+
+.title_parent {
+    font-size: 50px;
+}
+
+.title_child {
+    font-size: 25px;
+}
+
+.method, .url, .params, .param, .response, .example {
+    font-weight: bold;
+}
+/*.block ul{*/
+    /*margin-left: 50px;*/
+/*}*/
+.block {
+    display: inline-block;
+}
+.section_child{
+    margin-top: 20px;
+}

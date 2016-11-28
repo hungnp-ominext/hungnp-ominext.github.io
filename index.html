@@ -2,9 +2,472 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Matching - Docs</title>
+    <title>API Docs Matching App</title>
+    <link rel="stylesheet" href="css/prism.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-Hello!
+
+<div class="row">
+    <div class="header"></div>
+    <div class="nav navbar-default">
+        <div class="navbar-brand col-lg-4 col-md-4 col-sm-4">API Docs -
+            Matching
+        </div>
+        <div class="col-lg-7 col-md-7 col-sm-7 host">
+            Localhost: <a href="http://192.168.2.14/api">http://192.168.2.14:8000/api</a><br>
+            Host-dev: <a href="http://118.70.177.23/product_matching/public/api">http://118.70.177.23/product_matching/public/api</a>
+        </div>
+    </div>
+    <div class="container col-lg-12 col-md-12 col-sm-12">
+        <div class="navigation col-lg-2 col-md-3 col-sm-4">
+            <div class="list">
+                <ol>
+                    <li>Login
+                        <ol>
+                            <li><a href="#fb">Facebook</a></li>
+                            <li><a href="#gg">Google</a></li>
+                        </ol>
+                    </li>
+                    <li>Type
+                        <ol>
+                            <li><a href="#type">Loại phòng khám</a></li>
+                        </ol>
+                    </li>
+                    <li>Maps
+                        <ol>
+                            <li><a href="#near">Tìm lân cận</a></li>
+                        </ol>
+                    </li>
+                    <li>Search
+                        <ol>
+                            <li><a href="#search">Bộ lọc</a></li>
+                        </ol>
+                    </li>
+                    <li>Detail
+                        <ol>
+                            <li><a href="#detail">Chi tiết phòng khám</a></li>
+                        </ol>
+                    </li>
+                    <li>Rating
+                        <ol>
+                            <li>Đánh giá</li>
+                        </ol>
+                    </li>
+                    <li>Comment
+                        <ol>
+                            <li>Comment mới</li>
+                            <li>Sửa comment</li>
+                            <li>Xóa comment</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="content col-lg-10 col-md-9 col-sm-8">
+            <!-- Open Parent section-->
+            <div class="section col-lg-12 col-md-12 col-sm-12">
+                <p class="title_parent">Login</p>
+                <!-- Open section-->
+                <div class="section_child col-lg-12 col-md-12 col-sm-12">
+                    <p class="title_child" id="fb"><span style="color: #f4645f;">#</span> Facebook</p>
+                    <div class="block block col-lg-12 col-md-12 col-sm-12"><span class="method">Method: </span><span>POST</span>
+                    </div>
+                    <br>
+                    <div class="block block col-lg-12 col-md-12 col-sm-12"><span class="url">URL: </span><span><a>/login/loginFacebook</a></span>
+                    </div>
+                    <br>
+                    <div class="block block col-lg-12 col-md-12 col-sm-12"><span class="params">Parameters: </span>
+                        <ul class="">
+                            <li><span class="param">facebook_id : </span><span>id của tài khoản facebook</span></li>
+                            <li><span
+                                    class="param">facebook_access_token : </span><span>token của tài khoản facebook</span>
+                            </li>
+                            <li><span class="param">name : </span><span>Tên của tài khoản facebook</span></li>
+                            <li><span class="param">email : </span><span>Email của tài khoản facebook</span></li>
+                        </ul>
+                    </div>
+                    <br>
+                    <div class="block col-lg-12 col-md-12 col-sm-12">
+                        <span class="response">Response: </span><br>
+                        <pre class="col-lg-8 col-md-8 col-sm-8"><code class="language-json">
+{
+    "status": 1,
+    "messages": "Logged in",
+    "data": {
+        "userId": 10,
+        "user_email": "312321",
+        "user_avatar": null,
+        "last_login": "2016-10-10 14:44:42",
+        "patient": [
+            {
+                "id": 10,
+                "patient_name": "312",
+                "patient_type": 1,
+                "relationship": null,
+                "user_id": 10,
+                "dob": null,
+                "height": null,
+                "weight": null,
+                "blood_type": null,
+                "gender": 1,
+                "address": null,
+                "job": null,
+                "ward_id": null,
+                "district_id": null,
+                "province_id": null
+            }
+        ]
+    }
+}
+                    </code></pre>
+                    </div>
+                    <br>
+                </div>
+
+                <!-- Close section-->
+
+                <!-- Open section-->
+
+                <div class="section_child col-lg-12 col-md-12 col-sm-12">
+                    <p class="title_child" id="gg"><span style="color: #f4645f;">#</span> Google</p>
+                    <div class="block block col-lg-12 col-md-12 col-sm-12"><span class="method">Method: </span><span>POST</span>
+                    </div>
+                    <br>
+                    <div class="block block col-lg-12 col-md-12 col-sm-12"><span class="url">URL: </span><span><a>/login/loginGoogle</a></span>
+                    </div>
+                    <br>
+                    <div class="block block col-lg-12 col-md-12 col-sm-12"><span class="params">Parameters: </span>
+                        <ul class="">
+                            <li><span class="param">google_id : </span><span>id của tài khoản google</span></li>
+                            <li><span class="param">name : </span><span>Tên của tài khoản google</span></li>
+                            <li><span class="param">email : </span><span>Email của tài khoản google</span></li>
+                        </ul>
+                    </div>
+                    <br>
+                    <div class="block col-lg-12 col-md-12 col-sm-12">
+                        <span class="response">Response: </span><br>
+                        <pre class="col-lg-8 col-md-8 col-sm-8"><code class="language-json">
+{
+    "status": 1,
+    "messages": "Logged in",
+    "data": {
+        "userId": 10,
+        "user_email": "312321",
+        "user_avatar": null,
+        "last_login": "2016-10-10 14:44:42",
+        "patient": [
+            {
+                "id": 10,
+                "patient_name": "312",
+                "patient_type": 1,
+                "relationship": null,
+                "user_id": 10,
+                "dob": null,
+                "height": null,
+                "weight": null,
+                "blood_type": null,
+                "gender": 1,
+                "address": null,
+                "job": null,
+                "ward_id": null,
+                "district_id": null,
+                "province_id": null
+            }
+        ]
+    }
+}
+                    </code></pre>
+                    </div>
+                    <br>
+                </div>
+
+                <!-- Close section-->
+            </div>
+
+            <!-- Close Parent section-->
+
+            <!-- Open Parent section-->
+            <div class="section col-lg-12 col-md-12 col-sm-12">
+                <p class="title_parent">Type</p>
+                <!-- Open section-->
+                <div class="section_child col-lg-12 col-md-12 col-sm-12">
+                    <p class="title_child" id="type"><span style="color: #f4645f;">#</span> Lấy danh sách loại cơ sở</p>
+                    <div class="block block col-lg-12 col-md-12 col-sm-12"><span class="method">Method: </span><span>GET</span>
+                    </div>
+                    <br>
+                    <div class="block block col-lg-12 col-md-12 col-sm-12"><span class="url">URL: </span><span><a>/clinic/getTypes</a></span>
+                    </div>
+                    <br>
+                    <div class="block col-lg-12 col-md-12 col-sm-12">
+                        <span class="response">Response: </span><br>
+                        <pre class="col-lg-8 col-md-8 col-sm-8"><code class="language-json">
+{
+    "status": 1,
+    "message": "Success",
+    "data": [
+        {
+            "id": 1,
+            "name": "Bệnh viện"
+        },
+        {
+            "id": 2,
+            "name": "Phòng khám"
+        },
+        {
+            "id": 3,
+            "name": "Hiệu thuốc Tây"
+        },
+        {
+            "id": 4,
+            "name": "Nha khoa"
+        },
+        {
+            "id": 5,
+            "name": "Nhãn khoa"
+        },
+        {
+            "id": 6,
+            "name": "Da liễu"
+        },
+        {
+            "id": 7,
+            "name": "Hiệu thuốc Đông y"
+        }
+    ]
+}
+                    </code></pre>
+                    </div>
+                    <br>
+                </div>
+
+                <!-- Close section-->
+
+
+            </div>
+
+            <!-- Close Parent section-->
+
+            <!-- Open Parent section-->
+            <div class="section col-lg-12 col-md-12 col-sm-12">
+                <p class="title_parent">Maps</p>
+                <!-- Open section-->
+                <div class="section_child col-lg-12 col-md-12 col-sm-12">
+                    <p class="title_child" id="near"><span style="color: #f4645f;">#</span> Lấy cơ sở lân cận</p>
+                    <div class="block block col-lg-12 col-md-12 col-sm-12"><span class="method">Method: </span><span>GET</span>
+                    </div>
+                    <br>
+                    <div class="block block col-lg-12 col-md-12 col-sm-12"><span class="url">URL: </span><span><a>/clinic/getNearClinic</a></span>
+                    </div>
+                    <br>
+                    <div class="block block col-lg-12 col-md-12 col-sm-12"><span class="params">Parameters: </span>
+                        <ul class="">
+                            <li><span class="param">lat : </span><span>Latitude hiện tại của người dùng</span></li>
+                            <li><span
+                                    class="param">long : </span><span>Longitude hiện tại của người dùng</span>
+                            </li>
+                            <li><span class="param">rad : </span><span>Bán kính (400m là đẹp)</span></li>
+                            <li><span class="param">typeId (optional) : </span><span>Loại phòng khám, nếu có nhiều hơn 2 type thì cách nhau dấu phẩy ","</span></li>
+                        </ul>
+                    </div>
+                    <br>
+                    <div class="block block col-lg-12 col-md-12 col-sm-12"><span class="example">Example: </span><span><a>http://192.168.2.14:8000/api/clinic/getNearClinic?lat=21.0319322&long=105.7992144&rad=400&typeId=1,2,3</a></span>
+                    </div>
+                    <br>
+                    <div class="block col-lg-12 col-md-12 col-sm-12">
+                        <span class="response">Response: </span><br>
+                        <pre class="col-lg-8 col-md-8 col-sm-8"><code class="language-json">
+{
+    "status": 1,
+    "message": "Success",
+    "data": [
+        {
+            "id": 3357,
+            "clinic_lat": 21.032301,
+            "clinic_long": 105.799004,
+            "clinic_name": "Hiệu thuốc Cầu Giấy Pharmacy",
+            "clinic_address": "157, Cầu Giấy, Phường Quan Hoa, Quận Cầu Giấy, Hà Nội",
+            "clinic_type": 3,
+            "distance": "46.5"
+        },
+        {
+            "id": 525,
+            "clinic_lat": 21.032642,
+            "clinic_long": 105.798889,
+            "clinic_name": "Phòng khám tư nhân Răng - Hàm - Mặt",
+            "clinic_address": "157, Cầu Giấy, Phường Quan Hoa, Quận Cầu Giấy, Hà Nội",
+            "clinic_type": 2,
+            "distance": "85.8"
+        }
+    ]
+}
+                    </code></pre>
+                    </div>
+                    <br>
+                </div>
+
+                <!-- Close section-->
+
+
+            </div>
+
+            <!-- Close Parent section-->
+
+            <!-- Open Parent section-->
+            <div class="section col-lg-12 col-md-12 col-sm-12">
+                <p class="title_parent">Search</p>
+                <!-- Open section-->
+                <div class="section_child col-lg-12 col-md-12 col-sm-12">
+                    <p class="title_child" id="search"><span style="color: #f4645f;">#</span> Tìm kiếm cơ sở bằng bộ lọc</p>
+                    <div class="block block col-lg-12 col-md-12 col-sm-12"><span class="method">Method: </span><span>GET</span>
+                    </div>
+                    <br>
+                    <div class="block block col-lg-12 col-md-12 col-sm-12"><span class="url">URL: </span><span><a>/clinic/getByFilter</a></span>
+                    </div>
+                    <br>
+                    <div class="block block col-lg-12 col-md-12 col-sm-12"><span class="params">Parameters: </span>
+                        <ul class="">
+                            <li><span class="param">page : </span><span>Trang muốn lấy</span></li>
+                            <li><span class="param">limit : </span><span>Giới hạn số cơ sở lấy về trong 1 trang</span></li>
+                            <li><span class="param">lat (optional): </span><span>Latitude hiện tại của người dùng</span></li>
+                            <li><span class="param">long (optional): </span><span>Longitude hiện tại của người dùng</span></li>
+                            <li><span class="param">proId (optional): </span><span>ID của tỉnh/thành phố</span></li>
+                            <li><span class="param">disId (optional): </span><span>ID của quận/huyện</span></li>
+                            <li><span class="param">wardId (optional): </span><span>ID của phường/xã</span></li>
+                            <li><span class="param">typeId (optional) : </span><span>Loại phòng khám, nếu có nhiều hơn 2 type thì cách nhau dấu phẩy ","</span></li>
+                        </ul>
+                    </div>
+                    <br>
+                    <div class="block block col-lg-12 col-md-12 col-sm-12"><span class="example">Example: </span><span><a>http://192.168.2.14:8000/api/clinic/getByFilter?lat=21.0319198&long=105.7991067&proId=1&disId=&wardId=&typeId=&limit=10&page=1</a></span>
+                    </div>
+                    <br>
+                    <div class="block col-lg-12 col-md-12 col-sm-12">
+                        <span class="response">Response: </span><br>
+                        <pre class="col-lg-8 col-md-8 col-sm-8"><code class="language-json">
+{
+    "status": 1,
+    "message": "Success",
+    "data": {
+        "total": 8256,
+        "current_page": 1,
+        "last_page": 826,
+        "data": [
+            {
+                "id": 1,
+                "clinic_lat": 21.040697,
+                "clinic_long": 105.793999,
+                "clinic_name": "Bệnh viện quốc tế Hoa Kỳ Hà Nội",
+                "clinic_address": "1 Chùa Hà, Phường Dịch Vọng, Quận Cầu Giấy, Hà Nội",
+                "clinic_type": 1,
+                "distance": "1110.6"
+            },
+            {
+                "id": 2,
+                "clinic_lat": 21.0247,
+                "clinic_long": 105.805,
+                "clinic_name": "Khoa Nội C Bệnh viện Giao thông vận tải Trung ương",
+                "clinic_address": "Ngõ 84 Chùa Láng, phường\nLáng Thượng, Quận\nĐống Đa,\nHà Nội",
+                "clinic_type": 1,
+                "distance": "1009.3"
+            }
+        ]
+    }
+}
+                    </code></pre>
+                    </div>
+                    <br>
+                </div>
+
+                <!-- Close section-->
+
+
+            </div>
+
+            <!-- Close Parent section-->
+
+            <!-- Open Parent section-->
+            <div class="section col-lg-12 col-md-12 col-sm-12">
+                <p class="title_parent">Detail</p>
+                <!-- Open section-->
+                <div class="section_child col-lg-12 col-md-12 col-sm-12">
+                    <p class="title_child" id="detail"><span style="color: #f4645f;">#</span> Lấy chi tiết phòng khám</p>
+                    <div class="block block col-lg-12 col-md-12 col-sm-12"><span class="method">Method: </span><span>GET</span>
+                    </div>
+                    <br>
+                    <div class="block block col-lg-12 col-md-12 col-sm-12"><span class="url">URL: </span><span><a>/clinic/getClinicDetail</a></span>
+                    </div>
+                    <br>
+                    <div class="block block col-lg-12 col-md-12 col-sm-12"><span class="params">Parameters: </span>
+                        <ul class="">
+                            <li><span class="param">userId : </span><span>ID của người dùng</span></li>
+                            <li><span class="param">clinicId : </span><span>ID của cơ sở</span></li>
+                        </ul>
+                    </div>
+                    <br>
+                    <div class="block block col-lg-12 col-md-12 col-sm-12"><span class="example">Example: </span><span><a>http://192.168.2.14:8000/api/clinic/getClinicDetail?userId=1&clinicId=529</a></span>
+                    </div>
+                    <br>
+                    <div class="block col-lg-12 col-md-12 col-sm-12">
+                        <span class="response">Response: </span><br>
+                        <pre class="col-lg-8 col-md-8 col-sm-8"><code class="language-json">
+{
+    "status": 1,
+    "message": "Success",
+    "data": {
+        "is_bookmarked": 1,
+        "clinic_info": {
+            "id": 529,
+            "clinic_name": "Phòng khám Sản phụ khoa và Siêu Âm 4D Hà Nội",
+            "clinic_address": "61, Bờ Sông, Phường Quan Hoa, Quận Cầu Giấy, Hà Nội",
+            "clinic_type": 2,
+            "clinic_website": "http://example.com.vn",
+            "clinic_phone": "(84) 123.456.789 - (04) 978.654.321",
+            "clinic_time": "<p>Sáng: 07:00 - 11:30</p><p>Chiều: 13:00 - 08:30</p>",
+            "clinic_description": "<p>Phòng khám nha khoa thẩm mỹ Hàn Lâm được thành lập vào năm 1991</p><p>Nha khoa Thẩm mỹ Hàn Lâm chuyên điều trị các vấn đề răng hàm mặt, chỉnh nha,..</p>",
+            "clinic_rating": 4
+        },
+        "user_rating": 0,
+        "clinic_image": [],
+        "rates_number": 1,
+        "views_number": 252,
+        "reviews": [
+            {
+                "id": 47,
+                "user_id": 2,
+                "review": "new comment fix",
+                "created_at": "2016-10-03 14:36:15",
+                "updated_at": "2016-10-03 14:36:15",
+                "userName": "Dai Pham Pham"
+            },
+            {
+                "id": 46,
+                "user_id": 2,
+                "review": "new",
+                "created_at": "2016-10-03 14:28:48",
+                "updated_at": "2016-10-03 14:28:48",
+                "userName": "Dai Pham Pham"
+            }
+        ]
+    }
+}
+                    </code></pre>
+                    </div>
+                    <br>
+                </div>
+
+                <!-- Close section-->
+
+
+            </div>
+
+            <!-- Close Parent section-->
+        </div>
+    </div>
+</div>
+<script src="js/jquery-2.2.4.min.js"></script>
+<script src="js/prism.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
