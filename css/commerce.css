@@ -1721,21 +1721,23 @@ p.demo_store {
   padding-bottom: .5em;
 }
 .commerce span.onsale {
-  -webkit-border-radius: 100%;
-  border-radius: 100%;
+  /*-webkit-border-radius: 100%;*/
+  /*border-radius: 100%;*/
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  padding: 10px;
   color: #8c001a;
   background: #fff;
   display: block;
   font-size: 14px;
   font-weight: bold;
-  height: 58px;
-  line-height: 55px;
+  /*height: 80px;*/
+  /*line-height: 77px;*/
   position: absolute;
   right: 10px;
   text-align: center;
   text-transform: uppercase;
   top: 10px;
-  width: 58px;
+  /*width: 80px;*/
   z-index: 100;
 }
 .commerce span.out_of_stock {
