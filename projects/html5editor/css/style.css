@@ -61,6 +61,7 @@
 }
 
 .nav-left .large-tab .child-tab {
+    font-size: 12px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -92,10 +93,12 @@
 }
 
 .nav-right .common-tool .child-tab {
+    font-size: 12px;
     display: flex;
     justify-content: center;
-    align-content: flex-start;
+    align-content: center;
     flex-direction: column;
+    text-align: center;
     color: #ffffff;
     padding-left: 10px;
     padding-right: 10px;
