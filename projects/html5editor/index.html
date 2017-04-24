@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5 Image Editor</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/jquery.2.2.4.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+</head>
+<body>
+<div class="large-container">
+    <div class="nav-left">
+        <div class="logo">
+            <img src="images/content/logo/logo.png">
+        </div>
+        <div class="large-tab">
+            <div class="child-tab">POSTER</div>
+            <div class="child-tab">MATERIAL</div>
+            <div class="child-tab">TEXT</div>
+            <div class="child-tab">UPLOAD</div>
+            <div class="child-tab">TEMPLATE</div>
+        </div>
+    </div>
+    <div class="nav-right">
+        <div class="common-action">
+            <div class="child-tab">CLEAR IMAGE</div>
+            <div class="child-tab">DOWNLOAD</div>
+            <div class="child-tab">SHARE</div>
+        </div>
+        <div class="common-tool">
+            <div class="child-tab">UNDO</div>
+            <div class="child-tab">REDO</div>
+            <div class="child-tab">ZOOM DOWN</div>
+            <div class="child-tab">ZOOM SCROLL</div>
+            <div class="child-tab">ZOOM UP</div>
+            <div class="child-tab">PERCENT ZOOM</div>
+            <div class="child-tab">SCALE ENTIRE</div>
+            <div class="child-tab">FIT SCREEN</div>
+            <div class="child-tab">HAND TOOL</div>
+            <div class="child-tab">MOVE DOWN</div>
+            <div class="child-tab">MOVE UP</div>
+            <div class="child-tab">MOVE BOTTOM</div>
+            <div class="child-tab">MOVE TOP</div>
+            <div class="child-tab">CLONE</div>
+            <div class="child-tab">LOOK</div>
+            <div class="child-tab">DELETE</div>
+        </div>
+        <div id="canvas-working-area">
+            <canvas id="canvas">
+
+            </canvas>
+        </div>
+    </div>
+</div>
+<script src="js/libs/fabric.1.7.10.js"></script>
+<script src="js/main.js"></script>
+<script src="js/background-canvas.js"></script>
+</body>
+</html>
