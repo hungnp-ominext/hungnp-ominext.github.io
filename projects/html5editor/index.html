@@ -24,12 +24,30 @@
             <div class="child-tab"><i class="material-icons">file_upload</i>UPLOAD</div>
             <div class="child-tab"><i class="material-icons">satellite</i>TEMPLATE</div>
         </div>
+        <div class="content-tab">
+            <div id="ct_1" class="ct_content">
+                <div class="ct_1_content">
+                    <div id="text-style-1" class="text-object large-text non-select">Large</div>
+                    <div id="text-style-2" class="text-object medium-text non-select">Medium</div>
+                    <div id="text-style-3" class="text-object small-text non-select">Small</div>
+                    <div id="text-style-4" class="text-object bold large-text non-select">Bold Large</div>
+                    <div id="text-style-5" class="text-object bold medium-text non-select">Bold Medium</div>
+                    <div id="text-style-6" class="text-object bold small-text non-select">Bold Small</div>
+                    <div id="text-style-7" class="text-object italic large-text non-select">Italic Large</div>
+                    <div id="text-style-8" class="text-object italic medium-text non-select">Italic Medium</div>
+                    <div id="text-style-9" class="text-object italic small-text non-select">Italic Small</div>
+                    <div id="text-style-10" class="text-object bold italic large-text non-select">Bold Large</div>
+                    <div id="text-style-11" class="text-object bold italic medium-text non-select">Bold Medium</div>
+                    <div id="text-style-12" class="text-object bold italic small-text non-select">Bold Small</div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="nav-right">
         <div class="common-action">
-            <div class="child-tab">CLEAR IMAGE</div>
-            <div class="child-tab">DOWNLOAD</div>
-            <div class="child-tab">SHARE</div>
+            <div class="child-tab" id="clear">CLEAR IMAGE</div>
+            <div class="child-tab" id="export">DOWNLOAD</div>
+            <div class="child-tab" id="share">SHARE</div>
         </div>
         <div class="common-tool">
             <div class="child-tab"><i class="material-icons">undo</i>UNDO</div>
@@ -56,8 +74,13 @@
         </div>
     </div>
 </div>
-<script src="js/libs/fabric.1.7.10.js"></script>
+<script src="js/libs/fabric.1.7.11.js"></script>
 <script src="js/main.js"></script>
 <script src="js/background-canvas.js"></script>
+<script src="js/create-text.js"></script>
+<script src="js/download.js"></script>
+<script src="js/export.js"></script>
+<script src="js/clear.js"></script>
+<script src="js/share.js"></script>
 </body>
 </html>
