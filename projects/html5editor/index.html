@@ -56,28 +56,81 @@
             </div>
             <div id="ct_2" class="ct_content" ng-show="tabLeftActive.tabMaterialActive">
                 <div class="ct_2_content">
-                    Material
+                    <div class="create-material">
+                        <div class="material-item">
+                            <img src="">
+                        </div>
+                    </div>
+                    <div class="create-material">
+                        <div class="material-item">
+                            <img src="">
+                        </div>
+                    </div>
+                    <div class="create-material">
+                        <div class="material-item">
+                            <img src="">
+                        </div>
+                    </div>
+                    <div class="create-material">
+                        <div class="material-item">
+                            <img src="">
+                        </div>
+                    </div>
+                    <div class="create-material">
+                        <div class="material-item">
+                            <img src="">
+                        </div>
+                    </div>
+                    <div class="create-material">
+                        <div class="material-item">
+                            <img src="">
+                        </div>
+                    </div>
+                    <div class="create-material">
+                        <div class="material-item">
+                            <img src="">
+                        </div>
+                    </div>
+                    <div class="create-material">
+                        <div class="material-item">
+                            <img src="">
+                        </div>
+                    </div>
+                    <div class="create-material">
+                        <div class="material-item">
+                            <img src="">
+                        </div>
+                    </div>
+                    <div class="create-material">
+                        <div class="material-item">
+                            <img src="">
+                        </div>
+                    </div>
                 </div>
             </div>
             <div id="ct_3" class="ct_content" ng-show="tabLeftActive.tabTextActive">
                 <div class="ct_3_content">
-                    <div id="text-style-1" class="text-object large-text non-select">Large</div>
-                    <div id="text-style-2" class="text-object medium-text non-select">Medium</div>
-                    <div id="text-style-3" class="text-object small-text non-select">Small</div>
-                    <div id="text-style-4" class="text-object bold large-text non-select">Bold Large</div>
-                    <div id="text-style-5" class="text-object bold medium-text non-select">Bold Medium</div>
-                    <div id="text-style-6" class="text-object bold small-text non-select">Bold Small</div>
-                    <div id="text-style-7" class="text-object italic large-text non-select">Italic Large</div>
-                    <div id="text-style-8" class="text-object italic medium-text non-select">Italic Medium</div>
-                    <div id="text-style-9" class="text-object italic small-text non-select">Italic Small</div>
-                    <div id="text-style-10" class="text-object bold italic large-text non-select">Bold Large</div>
-                    <div id="text-style-11" class="text-object bold italic medium-text non-select">Bold Medium</div>
-                    <div id="text-style-12" class="text-object bold italic small-text non-select">Bold Small</div>
+                    <div id="text-style-1" class="text-object large-text non-select" ng-click="createText('Text',60,false,false)">Large</div>
+                    <div id="text-style-2" class="text-object medium-text non-select" ng-click="createText('Text',30,false,false)">Medium</div>
+                    <div id="text-style-3" class="text-object small-text non-select" ng-click="createText('Text',15,false,false)">Small</div>
+                    <div id="text-style-4" class="text-object bold large-text non-select" ng-click="createText('Text',60,true,false)">Bold Large</div>
+                    <div id="text-style-5" class="text-object bold medium-text non-select" ng-click="createText('Text',30,true,false)">Bold Medium</div>
+                    <div id="text-style-6" class="text-object bold small-text non-select" ng-click="createText('Text',15,true,false)">Bold Small</div>
+                    <div id="text-style-7" class="text-object italic large-text non-select" ng-click="createText('Text',60,false,true)">Italic Large</div>
+                    <div id="text-style-8" class="text-object italic medium-text non-select" ng-click="createText('Text',30,false,true)">Italic Medium</div>
+                    <div id="text-style-9" class="text-object italic small-text non-select" ng-click="createText('Text',15,false,true)">Italic Small</div>
+                    <div id="text-style-10" class="text-object bold italic large-text non-select" ng-click="createText('Text',60,true,true)">Bold Large</div>
+                    <div id="text-style-11" class="text-object bold italic medium-text non-select" ng-click="createText('Text',30,true,true)">Bold Medium</div>
+                    <div id="text-style-12" class="text-object bold italic small-text non-select" ng-click="createText('Text',15,true,true)">Bold Small</div>
                 </div>
             </div>
             <div id="ct_4" class="ct_content" ng-show="tabLeftActive.tabUploadActive">
                 <div class="ct_4_content">
-                    Upload
+                    <div id="upload-area" ondragend="angular.element(document.getElementById('upload-area')).scope().uploadFileDragend(event)"
+                         ondragover="angular.element(document.getElementById('upload-area')).scope().uploadFileDragover(event)"
+                         ondrop="angular.element(document.getElementById('upload-area')).scope().uploadFileDrop(event,$event.currentTarget)">
+                    </div>
+                    <p id="status"></p>
                 </div>
             </div>
             <div id="ct_5" class="ct_content" ng-show="tabLeftActive.tabTemplateActive">
@@ -126,21 +179,21 @@
             <div id="layer-tool">
             </div>
             <div id="layer-list">
-                <div class="layer-object">
-                    <div class="layer-object-display"><i class="material-icons non-select">remove_red_eye</i></div>
-                    <div class="layer-object-icon"><img src=""></div>
-                    <div class="layer-object-name"><span>Image1</span></div>
+                <div class="layer-object" ng-repeat="obj in canvasObjects">
+                    <div class="layer-object-display"><i class="material-icons non-select" ng-class="{'object-visible': obj.display}">remove_red_eye</i></div>
+                    <div class="layer-object-icon"><img ng-src="{{obj.image}}"></div>
+                    <div class="layer-object-name"><span>{{obj.name}}</span></div>
                 </div>
-                <div class="layer-object">
-                    <div class="layer-object-display"><i class="material-icons non-select">remove_red_eye</i></div>
-                    <div class="layer-object-icon"><img src=""></div>
-                    <div class="layer-object-name"><span>ádasdasdasd</span></div>
-                </div>
-                <div class="layer-object">
-                    <div class="layer-object-display"><i class="material-icons non-select">remove_red_eye</i></div>
-                    <div class="layer-object-icon"><img src=""></div>
-                    <div class="layer-object-name"><span>Image2</span></div>
-                </div>
+                <!--<div class="layer-object">-->
+                    <!--<div class="layer-object-display"><i class="material-icons non-select">remove_red_eye</i></div>-->
+                    <!--<div class="layer-object-icon"><img src=""></div>-->
+                    <!--<div class="layer-object-name"><span>ádasdasdasd</span></div>-->
+                <!--</div>-->
+                <!--<div class="layer-object">-->
+                    <!--<div class="layer-object-display"><i class="material-icons non-select">remove_red_eye</i></div>-->
+                    <!--<div class="layer-object-icon"><img src=""></div>-->
+                    <!--<div class="layer-object-name"><span>Image2</span></div>-->
+                <!--</div>-->
             </div>
         </div>
     </div>
