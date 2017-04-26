@@ -1,5 +1,5 @@
 .large-container {
-    overflow-x: auto;
+    overflow: hidden;
     width: auto;
     position: relative;
 }
@@ -72,6 +72,7 @@
     padding-left: 5px;
     padding-right: 5px;
 }
+
 .nav-right .common-action .child-tab {
     display: flex;
     justify-content: center;
@@ -82,7 +83,8 @@
     padding-left: 5px;
     padding-right: 5px;
 }
-.nav-right .common-tool{
+
+.nav-right .common-tool {
     display: flex;
     height: 48px;
     z-index: 100;
@@ -106,10 +108,10 @@
 }
 
 .child-tab {
-    -webkit-user-select: none;  /* Chrome all / Safari all */
-    -moz-user-select: none;     /* Firefox all */
-    -ms-user-select: none;      /* IE 10+ */
-    user-select: none;          /* Likely future */
+    -webkit-user-select: none; /* Chrome all / Safari all */
+    -moz-user-select: none; /* Firefox all */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none; /* Likely future */
 }
 
 .child-tab:hover {
@@ -144,10 +146,10 @@
 }
 
 .non-select {
-    -webkit-user-select: none;  /* Chrome all / Safari all */
-    -moz-user-select: none;     /* Firefox all */
-    -ms-user-select: none;      /* IE 10+ */
-    user-select: none;          /* Likely future */
+    -webkit-user-select: none; /* Chrome all / Safari all */
+    -moz-user-select: none; /* Firefox all */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none; /* Likely future */
 }
 
 .content-tab {
@@ -171,9 +173,9 @@
     text-align: center;
 }
 
-.text-object:hover{
+.text-object:hover {
     color: white;
-    text-shadow:5px 5px 10px #333333;
+    text-shadow: 5px 5px 10px #333333;
 }
 
 .large-text {
@@ -194,4 +196,182 @@
 
 .italic {
     font-style: italic;
+}
+
+#layer {
+    z-index: 2000;
+    position: absolute;
+    width: 300px;
+    height: 700px;
+    background-color: #e2e2e2;
+    top: 20%;
+    left: calc(100vw - 670px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+#layer-large-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#layer-panel-drag {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+    position: relative;
+    z-index: 2003;
+    width: 100%;
+    background-color: rgb(51, 51, 51);
+    height: 25px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+
+#layer-panel-drag:hover, #layer-panel-drag:focus {
+    cursor: move;
+    background-color: rgba(51, 51, 51, 0.7);
+}
+
+#layer-tool {
+    position: relative;
+    z-index: 2002;
+    width: 100%;
+    min-height: 48px;
+    background-color: #333;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+
+#layer-list {
+    position: relative;
+    z-index: 2001;
+    width: 100%;
+}
+
+.layer-object {
+    white-space: nowrap;
+    position: relative;
+    display: flex;
+    z-index: 2001;
+    width: 100%;
+    min-height: 48px;
+    background-color: #666666;
+    border: 1px solid #555555;
+    border-top: none;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+
+.layer-object:first-child {
+    border-top: 1px solid #555555;
+}
+
+.layer-object-display {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: 40px;
+    height: 48px;
+    border-right: 1px solid #555555;
+}
+
+.layer-object-display i {
+    cursor: pointer;
+    align-self: center;
+}
+
+.layer-object-icon {
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    width: 48px;
+    height: 48px;
+}
+
+.layer-object-icon img {
+    align-self: center;
+    width: 43px;
+    height: 43px;
+    background-color: white;
+}
+
+.layer-object-name {
+    align-content: center;
+    justify-content: flex-start;
+    display: flex;
+    width: 212px;
+    height: 48px;
+}
+
+.layer-object-name span {
+    padding-left: 10px;
+    padding-right: 10px;
+    align-self: center;
+    color: white;
+}
+
+.ct_1_content {
+    display: flex;
+    flex-direction: column;
+}
+
+.create-object {
+    justify-content: center;
+    align-content: center;
+    display: flex;
+    width: 310px;
+    min-height: 100px;
+    align-self: center;
+    /*background-color: blue;*/
+    margin-bottom: 20px;
+}
+
+.create-object:first-child {
+    margin-top: 20px;
+}
+
+.create-object:hover {
+    /*box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);*/
+}
+
+.create-item {
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-self: center;
+}
+
+.create-item:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.item1 {
+    width: 70px;
+    height: 100px;
+    background-color: white;
+}
+
+.item2 {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+}
+
+.item3 {
+    width: 200px;
+    height: 100px;
+    background-color: white;
+}
+
+.item4 {
+    width: 300px;
+    height: 150px;
+    background-color: white;
+}
+
+.create-item span {
+    align-self: center;
 }

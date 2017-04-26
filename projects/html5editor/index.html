@@ -8,25 +8,55 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
-    <script type="text/javascript" src="js/jquery.2.2.4.js"></script>
-    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/libs/jquery.2.2.4.js"></script>
+    <script type="text/javascript" src="js/libs/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/libs/bootstrap.js"></script>
 </head>
-<body>
-<div class="large-container">
+<body ng-app="app">
+<div class="large-container" ng-controller="AppController">
     <div class="nav-left">
         <div class="logo">
             <img src="images/content/logo/logo.png">
         </div>
         <div class="large-tab">
-            <div class="child-tab"><i class="material-icons">create</i>POSTER</div>
-            <div class="child-tab"><i class="material-icons">photo</i>MATERIAL</div>
-            <div class="child-tab"><i class="material-icons">title</i>TEXT</div>
-            <div class="child-tab"><i class="material-icons">file_upload</i>UPLOAD</div>
-            <div class="child-tab"><i class="material-icons">satellite</i>TEMPLATE</div>
+            <div class="child-tab" ng-click="activeTab('create')"><i class="material-icons">create</i>POSTER</div>
+            <div class="child-tab" ng-click="activeTab('material')"><i class="material-icons">photo</i>MATERIAL</div>
+            <div class="child-tab" ng-click="activeTab('text')"><i class="material-icons">title</i>TEXT</div>
+            <div class="child-tab" ng-click="activeTab('upload')"><i class="material-icons">file_upload</i>UPLOAD</div>
+            <div class="child-tab" ng-click="activeTab('template')"><i class="material-icons">satellite</i>TEMPLATE</div>
         </div>
         <div class="content-tab">
-            <div id="ct_1" class="ct_content">
-                <div class="ct_1_content">
+            <div id="ct_1" class="ct_content" ng-show="tabLeftActive.tabCreateActive">
+                <div class="ct_1_content non-select">
+                    <div class="create-object">
+                        <div class="create-item item1">
+                            <span>A4</span>
+                        </div>
+                    </div>
+                    <div class="create-object">
+                        <div class="create-item item2">
+                            <span>Instagram</span>
+                        </div>
+                    </div>
+                    <div class="create-object">
+                        <div class="create-item item3">
+                            <span>Facebook</span>
+                        </div>
+                    </div>
+                    <div class="create-object">
+                        <div class="create-item item4">
+                            <span>Youtube</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="ct_2" class="ct_content" ng-show="tabLeftActive.tabMaterialActive">
+                <div class="ct_2_content">
+                    Material
+                </div>
+            </div>
+            <div id="ct_3" class="ct_content" ng-show="tabLeftActive.tabTextActive">
+                <div class="ct_3_content">
                     <div id="text-style-1" class="text-object large-text non-select">Large</div>
                     <div id="text-style-2" class="text-object medium-text non-select">Medium</div>
                     <div id="text-style-3" class="text-object small-text non-select">Small</div>
@@ -41,6 +71,16 @@
                     <div id="text-style-12" class="text-object bold italic small-text non-select">Bold Small</div>
                 </div>
             </div>
+            <div id="ct_4" class="ct_content" ng-show="tabLeftActive.tabUploadActive">
+                <div class="ct_4_content">
+                    Upload
+                </div>
+            </div>
+            <div id="ct_5" class="ct_content" ng-show="tabLeftActive.tabTemplateActive">
+                <div class="ct_5_content">
+                    Template
+                </div>
+            </div>
         </div>
     </div>
     <div class="nav-right">
@@ -52,10 +92,10 @@
         <div class="common-tool">
             <div class="child-tab"><i class="material-icons">undo</i>UNDO</div>
             <div class="child-tab"><i class="material-icons">redo</i>REDO</div>
-            <div class="child-tab"><i class="material-icons">add</i>ZOOM DOWN</div>
+            <div class="child-tab" ng-click="decreaseZoom()"><i class="material-icons">remove</i>ZOOM DOWN</div>
             <div class="child-tab">ZOOM SCROLL</div>
-            <div class="child-tab"><i class="material-icons">remove</i>ZOOM UP</div>
-            <div class="child-tab">PERCENT ZOOM</div>
+            <div class="child-tab" ng-click="increaseZoom()"><i class="material-icons">add</i>ZOOM UP</div>
+            <div class="child-tab">{{percentZoom}} %</div>
             <div class="child-tab"><i class="material-icons">fullscreen</i>SCALE ENTIRE</div>
             <div class="child-tab"><i class="material-icons">fullscreen_exit</i>FIT SCREEN</div>
             <div class="child-tab"><i class="material-icons">pan_tool</i>PAN TOOL</div>
@@ -73,12 +113,43 @@
             </canvas>
         </div>
     </div>
+    <div id="layer">
+        <div id="layer-large-container">
+            <div id="layer-panel-drag">
+                <i class="material-icons">drag_handle</i>
+                <span>Layer (drag & drop)</span>
+            </div>
+            <div id="layer-tool">
+            </div>
+            <div id="layer-list">
+                <div class="layer-object">
+                    <div class="layer-object-display"><i class="material-icons non-select">remove_red_eye</i></div>
+                    <div class="layer-object-icon"><img src=""></div>
+                    <div class="layer-object-name"><span>Image1</span></div>
+                </div>
+                <div class="layer-object">
+                    <div class="layer-object-display"><i class="material-icons non-select">remove_red_eye</i></div>
+                    <div class="layer-object-icon"><img src=""></div>
+                    <div class="layer-object-name"><span>ádasdasdasd</span></div>
+                </div>
+                <div class="layer-object">
+                    <div class="layer-object-display"><i class="material-icons non-select">remove_red_eye</i></div>
+                    <div class="layer-object-icon"><img src=""></div>
+                    <div class="layer-object-name"><span>Image2</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+<script type="text/javascript" src="js/libs/angular.js"></script>
+<script type="text/javascript" src="js/angularjs/app-controller.js"></script>
+<script type="text/javascript" src="js/angularjs/config.js"></script>
+<script src="js/style.js"></script>
 <script src="js/libs/fabric.1.7.11.js"></script>
 <script src="js/main.js"></script>
 <script src="js/background-canvas.js"></script>
 <script src="js/create-text.js"></script>
-<script src="js/download.js"></script>
+<script src="js/libs/download.js"></script>
 <script src="js/export.js"></script>
 <script src="js/clear.js"></script>
 <script src="js/share.js"></script>
