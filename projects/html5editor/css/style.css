@@ -336,8 +336,9 @@
 }
 
 .create-item {
+    flex-direction: column;
     cursor: pointer;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     display: flex;
     justify-content: center;
     align-content: center;
@@ -374,4 +375,14 @@
 
 .create-item span {
     align-self: center;
+}
+
+.create-item .create-item-name {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.create-item .create-item-size {
+    font-style: italic;
+    font-size: 12px;
 }

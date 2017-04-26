@@ -3,34 +3,23 @@
  */
 
 function AppController($scope) {
-    $scope.zoomNumber = 1;
+    $scope.zoomNumber = DEFAULT_ZOOM;
     $scope.percentZoom = ($scope.zoomNumber * 100).toFixed(0);
-    $scope.canvas = canvas;
-    $scope.contentText = "";
-    $scope.c2 = false;
-    $scope.c3 = false;
-    $scope.strokeWidth = 0;
-    $scope.stroke = "000000";
-    $scope.shadowTransparent = 100;
-    $scope.shadowDistance = 0;
-    $scope.shadowBlur = 0;
-    $scope.shadowPosition = 7;
-    $scope.shadowColor = "000000";
-    $scope.fontsize = 60;
-    $scope.charSpacing = 0;
-    $scope.lineHeight = 0;
-    $scope.colorText = "#000000";
-    $scope.fontFamily = "genjyuugothic-p-normal";
+    $scope.poster = {
+        width: DEFAULT_WIDTH,
+        height: DEFAULT_HEIGHT
+    };
+    $scope.canvasPoster = null;
     // $scope.getActiveStyle = getActiveStyle;
     $scope.decreaseZoom = function () {
-        if ($scope.zoomNumber >= 0.2) {
-            $scope.zoomNumber = $scope.zoomNumber - 0.1;
+        if ($scope.zoomNumber >= MIN_ZOOM + ZOOM_STEP) {
+            $scope.zoomNumber = $scope.zoomNumber - ZOOM_STEP;
             $scope.setZoom();
         }
     };
     $scope.increaseZoom = function () {
-        if ($scope.zoomNumber <= 2.9) {
-            $scope.zoomNumber = $scope.zoomNumber + 0.1;
+        if ($scope.zoomNumber <= MAX_ZOOM - ZOOM_STEP) {
+            $scope.zoomNumber = $scope.zoomNumber + ZOOM_STEP;
             $scope.setZoom();
         }
     };
@@ -41,7 +30,31 @@ function AppController($scope) {
         $scope.percentZoom = ($scope.zoomNumber * 100).toFixed(0);
 
     };
-
+    $scope.zoomEntire = function () {
+        $scope.zoomNumber = DEFAULT_ZOOM;
+        $scope.setZoom();
+    };
+    $scope.createPoster = function (item) {
+        if ($scope.canvasPoster !== null) {
+            $scope.canvasPoster.remove();
+        }
+        var width = angular.element(item).data('width');
+        var height = angular.element(item).data('height');
+        $scope.canvasPoster = new fabric.Rect({
+            fill: DEFAULT_BACKGROUND_COLOR,
+            width: width,
+            height: height,
+            selectable: false,
+            hoverCursor: "default",
+            alwaysBottom: true,
+            posterType: "poster",
+            evented: false
+        });
+        canvas.add($scope.canvasPoster);
+        $scope.canvasPoster.sendBackwards();
+        $scope.canvasPoster.center();
+        $scope.canvasPoster.setCoords();
+    };
     $scope.tabLeftActive = {
         tabCreateActive: true,
         tabMaterialActive: false,
@@ -69,7 +82,7 @@ function AppController($scope) {
                 break;
         }
     };
-    
+
     $scope.setActiveTabLeft = function (index) {
         angular.forEach($scope.tabLeftActive, function (value, key) {
             $scope.tabLeftActive[key] = index === key;

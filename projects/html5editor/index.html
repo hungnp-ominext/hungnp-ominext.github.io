@@ -29,23 +29,27 @@
             <div id="ct_1" class="ct_content" ng-show="tabLeftActive.tabCreateActive">
                 <div class="ct_1_content non-select">
                     <div class="create-object">
-                        <div class="create-item item1">
-                            <span>A4</span>
+                        <div class="create-item item1" ng-click="createPoster($event.currentTarget)" data-width="500" data-height="700">
+                            <span class="create-item-name">A4</span>
+                            <span class="create-item-size">(500*700)</span>
                         </div>
                     </div>
                     <div class="create-object">
-                        <div class="create-item item2">
-                            <span>Instagram</span>
+                        <div class="create-item item2" ng-click="createPoster($event.currentTarget)" data-width="500" data-height="500">
+                            <span class="create-item-name">Instagram</span>
+                            <span class="create-item-size">(500*500)</span>
                         </div>
                     </div>
                     <div class="create-object">
-                        <div class="create-item item3">
-                            <span>Facebook</span>
+                        <div class="create-item item3" ng-click="createPoster($event.currentTarget)" data-width="828" data-height="315">
+                            <span class="create-item-name">Facebook</span>
+                            <span class="create-item-size">(828*315)</span>
                         </div>
                     </div>
                     <div class="create-object">
-                        <div class="create-item item4">
-                            <span>Youtube</span>
+                        <div class="create-item item4" ng-click="createPoster($event.currentTarget)" data-width="1280" data-height="760">
+                            <span class="create-item-name">Youtube</span>
+                            <span class="create-item-size">(1280*760)</span>
                         </div>
                     </div>
                 </div>
@@ -96,7 +100,7 @@
             <div class="child-tab">ZOOM SCROLL</div>
             <div class="child-tab" ng-click="increaseZoom()"><i class="material-icons">add</i>ZOOM UP</div>
             <div class="child-tab">{{percentZoom}} %</div>
-            <div class="child-tab"><i class="material-icons">fullscreen</i>SCALE ENTIRE</div>
+            <div class="child-tab" ng-click="zoomEntire()"><i class="material-icons">fullscreen</i>SCALE ENTIRE</div>
             <div class="child-tab"><i class="material-icons">fullscreen_exit</i>FIT SCREEN</div>
             <div class="child-tab"><i class="material-icons">pan_tool</i>PAN TOOL</div>
             <div class="child-tab"><i class="material-icons">arrow_downward</i>MOVE DOWN</div>
@@ -142,12 +146,14 @@
     </div>
 </div>
 <script type="text/javascript" src="js/libs/angular.js"></script>
+<script type="text/javascript" src="js/app-config.js"></script>
 <script type="text/javascript" src="js/angularjs/app-controller.js"></script>
 <script type="text/javascript" src="js/angularjs/config.js"></script>
 <script src="js/style.js"></script>
 <script src="js/libs/fabric.1.7.11.js"></script>
 <script src="js/main.js"></script>
 <script src="js/background-canvas.js"></script>
+<script src="js/create-poster.js"></script>
 <script src="js/create-text.js"></script>
 <script src="js/libs/download.js"></script>
 <script src="js/export.js"></script>
