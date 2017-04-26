@@ -180,7 +180,10 @@
             </div>
             <div id="layer-list">
                 <div class="layer-object" ng-repeat="obj in canvasObjects">
-                    <div class="layer-object-display"><i class="material-icons non-select" ng-class="{'object-visible': obj.display}">remove_red_eye</i></div>
+                    <div class="layer-object-display">
+                        <i class="material-icons non-select" ng-class="{'object-visible': obj.display}"
+                        ng-click="layerToggleHidden(obj)">remove_red_eye</i>
+                    </div>
                     <div class="layer-object-icon"><img ng-src="{{obj.image}}"></div>
                     <div class="layer-object-name"><span>{{obj.name}}</span></div>
                 </div>

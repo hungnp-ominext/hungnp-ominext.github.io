@@ -105,6 +105,17 @@ function AppController($scope) {
         reader.readAsDataURL(file);
         return false;
     };
+    $scope.layerToggleHidden = function (obj) {
+        var index = $scope.canvasObjects.indexOf(obj);
+        if (obj.display) {
+            obj.display = false;
+            canvas.item(index).opacity = 0;
+        } else {
+            obj.display = true;
+            canvas.item(index).opacity = 1;
+        }
+        canvas.renderAll();
+    };
     $scope.getObjects = function () {
         $scope.canvasObjects = [];
         var objects = canvas.getObjects();
