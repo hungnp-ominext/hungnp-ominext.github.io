@@ -116,6 +116,10 @@ function AppController($scope) {
         }
         canvas.renderAll();
     };
+    $scope.layerToggleActive = function (obj) {
+        var index = $scope.canvasObjects.indexOf(obj);
+        canvas.setActiveObject(canvas.item(index));
+    };
     $scope.getObjects = function () {
         $scope.canvasObjects = [];
         var objects = canvas.getObjects();
@@ -127,7 +131,9 @@ function AppController($scope) {
             $scope.canvasObjects.push(obj);
         })
     };
+    $scope.openLayerStyle = function (obj) {
 
+    };
     $scope.activeTab = function (tab) {
         switch (tab) {
             case 'create':

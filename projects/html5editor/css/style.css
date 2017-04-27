@@ -205,7 +205,7 @@
     height: 700px;
     background-color: #e2e2e2;
     top: 20%;
-    left: calc(100vw - 670px);
+    left: calc(100vw - 370px);
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
@@ -248,6 +248,8 @@
     position: relative;
     z-index: 2001;
     width: 100%;
+    height: calc(100% - 48px - 25px);
+    overflow-y: auto;
 }
 
 .layer-object {
@@ -408,4 +410,122 @@
 #upload-area.hover { border: 10px dashed #333; }
 .object-visible {
     color: white;
+}
+
+#layer-style {
+    z-index: 3000;
+    position: absolute;
+    width: 700px;
+    height: 500px;
+    background-color: #e2e2e2;
+    top: 20%;
+    left: calc(100vw - 1570px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+#layer-style-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#layer-style-panel-drag {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+    position: relative;
+    z-index: 2003;
+    width: 100%;
+    background-color: rgb(51, 51, 51);
+    height: 40px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+#layer-style-panel-drag:hover, #layer-style-panel-drag:focus {
+    cursor: move;
+    background-color: rgba(51, 51, 51, 0.7);
+}
+#layer-style-panel-drag i, #layer-style-panel-drag span {
+    align-self: center;
+}
+#layer-style-list {
+    display: flex;
+    width: 100%;
+    height: calc(100% - 40px);
+    position: relative;
+}
+#layer-style-list #layer-style-list-left {
+    display: flex;
+    flex-flow: column;
+    color: white;
+    width: 160px;
+    background-color: #333;
+    height: 100%;
+}
+#layer-style-list #layer-style-list-left .layer-style-list-option {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid black;
+    padding-left: 10px;
+}
+#layer-style-list #layer-style-list-left label {
+    font-weight: normal;
+}
+#layer-style-list #layer-style-list-center {
+    width: calc(100% - 160px - 120px);
+    height: 100%;
+}
+#layer-style-list #layer-style-list-right {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 140px;
+    background-color: #777;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+}
+
+#layer-style-list #layer-style-list-right .layer-style-button {
+    cursor: pointer;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 1px solid #999;
+    border-radius: 30px;
+    color: white;
+    margin-top: 10px;
+    text-align: center;
+}
+#layer-style-list #layer-style-list-right #layer-style-group-preview #layer-style-group-checkbox {
+    display: flex;
+    justify-content: center;
+}
+#layer-style-list #layer-style-list-right #layer-style-group-preview {
+    margin-top: 10px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-flow: column;
+}
+#layer-style-list #layer-style-list-right #layer-style-group-preview label {
+    color: white;
+    align-self: center;
+    margin-left: 5px;
+}
+#layer-style-list #layer-style-list-right #layer-style-group-preview #layer-style-group-image-preview {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    background-color: #333;
+}
+#layer-style-list #layer-style-list-right #layer-style-group-preview #layer-style-group-image-preview img{
+    align-self: center;
+    width: 80px;
+    height: 80px;
+    max-width: 80px;
+    max-height: 80px;
+    background-color: #777;
 }

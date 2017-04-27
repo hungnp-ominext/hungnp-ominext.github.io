@@ -5,6 +5,10 @@ $('#layer').draggable({
     handle: '#layer-panel-drag',
     scroll: false
 });
+$('#layer-style').draggable({
+    handle: '#layer-style-panel-drag',
+    scroll: false
+});
 // var holder = document.getElementById('upload-area'),
 //     state = document.getElementById('status');
 //
