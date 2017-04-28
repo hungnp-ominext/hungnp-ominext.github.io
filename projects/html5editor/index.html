@@ -143,6 +143,7 @@
     <div class="nav-right">
         <div class="common-action">
             <div class="child-tab" id="clear">CLEAR IMAGE</div>
+            <div class="child-tab" id="showcase"><i class="material-icons">star_border</i>PREMIUM SHOWCASE</div>
             <div class="child-tab" id="export">DOWNLOAD</div>
             <div class="child-tab" id="share">SHARE</div>
         </div>
@@ -253,6 +254,19 @@
             </div>
         </div>
     </div>
+    <div id="showcase-container">
+        <div id="showcase-modal">
+            <div class="title">
+               <i class="material-icons">star_border</i>PREMIUM SHOWCASE
+            </div>
+            <div class="showcase-name">
+                3D TRANSFORMATION
+            </div>
+            <div class="showcase-canvas-container">
+                <canvas id="showcase-canvas"></canvas>
+            </div>
+        </div>
+    </div>
 </div>
 <script type="text/javascript" src="js/libs/angular.js"></script>
 <script type="text/javascript" src="js/app-config.js"></script>
@@ -261,6 +275,7 @@
 <script src="js/style.js"></script>
 <script src="js/libs/fabric.1.7.11.js"></script>
 <script src="js/main.js"></script>
+<script src="js/showcase.js"></script>
 <script src="js/background-canvas.js"></script>
 <script src="js/create-poster.js"></script>
 <script src="js/create-text.js"></script>
