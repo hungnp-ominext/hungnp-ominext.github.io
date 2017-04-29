@@ -143,7 +143,7 @@
     <div class="nav-right">
         <div class="common-action">
             <div class="child-tab" id="clear">CLEAR IMAGE</div>
-            <div class="child-tab" id="showcase"><i class="material-icons">star_border</i>PREMIUM SHOWCASE</div>
+            <div class="child-tab" id="showcase" ng-click="openShowcase()"><i class="material-icons">star_border</i>PREMIUM SHOWCASE</div>
             <div class="child-tab" id="export">DOWNLOAD</div>
             <div class="child-tab" id="share">SHARE</div>
         </div>
@@ -171,90 +171,8 @@
             </canvas>
         </div>
     </div>
-    <div id="layer">
-        <div id="layer-large-container">
-            <div id="layer-panel-drag">
-                <i class="material-icons">drag_handle</i>
-                <span>Layer (drag & drop)</span>
-            </div>
-            <div id="layer-tool">
-            </div>
-            <div id="layer-list">
-                <div class="layer-object" ng-repeat="obj in canvasObjects" ng-click="layerToggleActive(obj)" ng-dblclick="openLayerStyle(obj)">
-                    <div class="layer-object-display">
-                        <i class="material-icons non-select" ng-class="{'object-visible': obj.display}"
-                        ng-click="layerToggleHidden(obj)">remove_red_eye</i>
-                    </div>
-                    <div class="layer-object-icon"><img ng-src="{{obj.image}}"></div>
-                    <div class="layer-object-name"><span>{{obj.name}}</span></div>
-                </div>
-                <!--<div class="layer-object">-->
-                    <!--<div class="layer-object-display"><i class="material-icons non-select">remove_red_eye</i></div>-->
-                    <!--<div class="layer-object-icon"><img src=""></div>-->
-                    <!--<div class="layer-object-name"><span>ádasdasdasd</span></div>-->
-                <!--</div>-->
-                <!--<div class="layer-object">-->
-                    <!--<div class="layer-object-display"><i class="material-icons non-select">remove_red_eye</i></div>-->
-                    <!--<div class="layer-object-icon"><img src=""></div>-->
-                    <!--<div class="layer-object-name"><span>Image2</span></div>-->
-                <!--</div>-->
-            </div>
-        </div>
-    </div>
-    <div id="layer-style">
-        <div id="layer-style-container">
-            <div id="layer-style-panel-drag" class="non-select">
-                <i class="material-icons">drag_handle</i>
-                <span>Layer Style</span>
-                <span>(drag & drop)</span>
-            </div>
-            <div id="layer-style-list" class="non-select">
-                <div id="layer-style-list-left">
-                    <div class="layer-style-list-option">
-                        <input type="checkbox" name="vehicle" value="Bike" id="layer-style-blending">
-                        <label for="layer-style-blending">Blending Options</label>
-                    </div>
-                    <div class="layer-style-list-option">
-                        <input type="checkbox" name="vehicle" value="Bike" id="layer-style-stroke">
-                        <label for="layer-style-stroke">Stroke</label>
-                    </div>
-                    <div class="layer-style-list-option">
-                        <input type="checkbox" name="vehicle" value="Bike" id="layer-style-dropshadow">
-                        <label for="layer-style-dropshadow">Drop Shadow</label>
-                    </div>
-                    <div class="layer-style-list-option">
-                        <input type="checkbox" name="vehicle" value="Bike" id="layer-style-coloroverlay">
-                        <label for="layer-style-coloroverlay">Color Overlay</label>
-                    </div>
-                    <div class="layer-style-list-option">
-                        <input type="checkbox" name="vehicle" value="Bike" id="layer-style-gradientoverlay">
-                        <label for="layer-style-gradientoverlay">Gradient Overlay</label>
-                    </div>
-                    <div class="layer-style-list-option">
-                        <input type="checkbox" name="vehicle" value="Bike" id="layer-style-patternoverlay">
-                        <label for="layer-style-patternoverlay">Pattern Overlay</label>
-                    </div>
-                </div>
-                <div id="layer-style-list-center">
 
-                </div>
-                <div id="layer-style-list-right">
-                    <div class="layer-style-button">OK</div>
-                    <div class="layer-style-button">Cancel</div>
-                    <div id="layer-style-group-preview">
-                        <div id="layer-style-group-checkbox">
-                            <input type="checkbox" name="vehicle" value="Bike" id="layer-style-preview">
-                            <label for="layer-style-preview">Preview</label>
-                        </div>
-                        <div id="layer-style-group-image-preview">
-                            <img src="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="showcase-container">
+    <div id="showcase-container" ng-class="{displayShowcase: openningShowcase}">
         <div id="showcase-modal">
             <div class="title">
                <i class="material-icons">star_border</i>PREMIUM SHOWCASE
@@ -264,6 +182,89 @@
             </div>
             <div class="showcase-canvas-container">
                 <canvas id="showcase-canvas"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="layer">
+    <div id="layer-large-container">
+        <div id="layer-panel-drag">
+            <i class="material-icons">drag_handle</i>
+            <span>Layer (drag & drop)</span>
+        </div>
+        <div id="layer-tool">
+        </div>
+        <div id="layer-list">
+            <div class="layer-object" ng-repeat="obj in canvasObjects" ng-click="layerToggleActive(obj)" ng-dblclick="openLayerStyle(obj)">
+                <div class="layer-object-display">
+                    <i class="material-icons non-select" ng-class="{'object-visible': obj.display}"
+                       ng-click="layerToggleHidden(obj)">remove_red_eye</i>
+                </div>
+                <div class="layer-object-icon"><img ng-src="{{obj.image}}"></div>
+                <div class="layer-object-name"><span>{{obj.name}}</span></div>
+            </div>
+            <!--<div class="layer-object">-->
+            <!--<div class="layer-object-display"><i class="material-icons non-select">remove_red_eye</i></div>-->
+            <!--<div class="layer-object-icon"><img src=""></div>-->
+            <!--<div class="layer-object-name"><span>ádasdasdasd</span></div>-->
+            <!--</div>-->
+            <!--<div class="layer-object">-->
+            <!--<div class="layer-object-display"><i class="material-icons non-select">remove_red_eye</i></div>-->
+            <!--<div class="layer-object-icon"><img src=""></div>-->
+            <!--<div class="layer-object-name"><span>Image2</span></div>-->
+            <!--</div>-->
+        </div>
+    </div>
+</div>
+<div id="layer-style">
+    <div id="layer-style-container">
+        <div id="layer-style-panel-drag" class="non-select">
+            <i class="material-icons">drag_handle</i>
+            <span>Layer Style</span>
+            <span>(drag & drop)</span>
+        </div>
+        <div id="layer-style-list" class="non-select">
+            <div id="layer-style-list-left">
+                <div class="layer-style-list-option">
+                    <input type="checkbox" name="vehicle" value="Bike" id="layer-style-blending">
+                    <label for="layer-style-blending">Blending Options</label>
+                </div>
+                <div class="layer-style-list-option">
+                    <input type="checkbox" name="vehicle" value="Bike" id="layer-style-stroke">
+                    <label for="layer-style-stroke">Stroke</label>
+                </div>
+                <div class="layer-style-list-option">
+                    <input type="checkbox" name="vehicle" value="Bike" id="layer-style-dropshadow">
+                    <label for="layer-style-dropshadow">Drop Shadow</label>
+                </div>
+                <div class="layer-style-list-option">
+                    <input type="checkbox" name="vehicle" value="Bike" id="layer-style-coloroverlay">
+                    <label for="layer-style-coloroverlay">Color Overlay</label>
+                </div>
+                <div class="layer-style-list-option">
+                    <input type="checkbox" name="vehicle" value="Bike" id="layer-style-gradientoverlay">
+                    <label for="layer-style-gradientoverlay">Gradient Overlay</label>
+                </div>
+                <div class="layer-style-list-option">
+                    <input type="checkbox" name="vehicle" value="Bike" id="layer-style-patternoverlay">
+                    <label for="layer-style-patternoverlay">Pattern Overlay</label>
+                </div>
+            </div>
+            <div id="layer-style-list-center">
+
+            </div>
+            <div id="layer-style-list-right">
+                <div class="layer-style-button">OK</div>
+                <div class="layer-style-button">Cancel</div>
+                <div id="layer-style-group-preview">
+                    <div id="layer-style-group-checkbox">
+                        <input type="checkbox" name="vehicle" value="Bike" id="layer-style-preview">
+                        <label for="layer-style-preview">Preview</label>
+                    </div>
+                    <div id="layer-style-group-image-preview">
+                        <img src="">
+                    </div>
+                </div>
             </div>
         </div>
     </div>

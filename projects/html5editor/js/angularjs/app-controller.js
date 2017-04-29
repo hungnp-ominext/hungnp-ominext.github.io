@@ -160,6 +160,11 @@ function AppController($scope) {
         })
     };
 
+    $scope.openningShowcase = false;
+    $scope.openShowcase = function () {
+        $scope.openningShowcase = true;
+    };
+
     addAccessors($scope);
     watchCanvas($scope);
 }
